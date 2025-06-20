@@ -1,9 +1,13 @@
 <div class="header-content">
-  <a href="/" class="logo">{{ site.Title }}</a>
+  <a href="/" class="logo">
+    <img src="/logo.svg" alt="{{ site.Title }}" class="logo-img">
+    <span class="logo-text">{{ site.Title }}</span>
+  </a>
   <nav>
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
   </nav>
   <button class="dark-mode-toggle" aria-label="Toggle dark mode">
-    🌙
+    <span class="dark-icon">🌙</span>
+    <span class="light-icon">☀️</span>
   </button>
 </div>

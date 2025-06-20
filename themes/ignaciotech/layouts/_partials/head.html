@@ -5,8 +5,13 @@
 <!-- SEO Meta Tags -->
 <meta name="description" content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Description | default .Summary | truncate 160 }}{{ end }}">
 <meta name="author" content="{{ site.Params.author }}">
+<meta name="keywords" content="Android Developer, AI Engineer, Software Engineer, Mobile Development, Kotlin, Python, Machine Learning, Open Source, Spain, Valencia">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Additional SEO -->
+<meta name="theme-color" content="#0066CC">
+<meta name="msapplication-TileColor" content="#0066CC">
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">

@@ -3,20 +3,25 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tags | Ignacio Delgado - Software Engineer</title>
+<title>Tags | ignacio.tech</title>
 
 
 <meta name="description" content="">
-<meta name="author" content="Ignacio Delgado">
+<meta name="author" content="Ignacio">
+<meta name="keywords" content="Android Developer, AI Engineer, Software Engineer, Mobile Development, Kotlin, Python, Machine Learning, Open Source, Spain, Valencia">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="http://localhost:1313/tags/">
+
+
+<meta name="theme-color" content="#0066CC">
+<meta name="msapplication-TileColor" content="#0066CC">
 
 
 <meta property="og:title" content="Tags">
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://localhost:1313/tags/">
-<meta property="og:site_name" content="Ignacio Delgado - Software Engineer">
+<meta property="og:site_name" content="ignacio.tech">
 
 
 <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +49,10 @@
 <body class="dark-theme">
   <header class="header">
     <div class="header-content">
-  <a href="/" class="logo">Ignacio Delgado - Software Engineer</a>
+  <a href="/" class="logo">
+    <img src="/logo.svg" alt="ignacio.tech" class="logo-img">
+    <span class="logo-text">ignacio.tech</span>
+  </a>
   <nav>
     
   <ul class="nav-menu">
@@ -67,7 +75,8 @@
 
   </nav>
   <button class="dark-mode-toggle" aria-label="Toggle dark mode">
-    🌙
+    <span class="dark-icon">🌙</span>
+    <span class="light-icon">☀️</span>
   </button>
 </div>
 
@@ -88,12 +97,12 @@
   <footer class="footer">
     <div class="container">
   <div class="social-links">
-    <a href="mailto:me@igdel.com" aria-label="Email">✉️</a>
+    <a href="mailto:hi@ignacio.tech" aria-label="Email">✉️</a>
     <a href="https://github.com/shirabit" target="_blank" rel="noopener noreferrer" aria-label="GitHub">💻</a>
     <a href="https://linkedin.com/in/shirabit" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">💼</a>
-    <a href="https://ignaciodelgado.com" target="_blank" rel="noopener noreferrer" aria-label="Website">🌐</a>
+    <a href="https://ignacio.tech" target="_blank" rel="noopener noreferrer" aria-label="Website">🌐</a>
   </div>
-  <p>&copy; 2025 Ignacio Delgado. All rights reserved.</p>
+  <p>&copy; 2025 Ignacio. All rights reserved.</p>
 </div>
 
   </footer>
@@ -113,6 +122,23 @@
     if (savedTheme) {
       html.className = savedTheme === 'dark' ? 'dark-mode' : 'light-mode';
     }
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>

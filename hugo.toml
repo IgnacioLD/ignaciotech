@@ -1,13 +1,12 @@
-baseURL = 'https://ignaciodelgado.com'
+baseURL = 'https://ignacio.tech'
 languageCode = 'en-us'
-title = 'Ignacio Delgado - Software Engineer'
+title = 'ignacio.tech'
 theme = 'ignaciotech'
 
 [params]
-  description = "4+ years of experience in fintech and banking. Specialized in Android development and creating innovative solutions with generative AI."
-  author = "Ignacio Delgado"
-  email = "me@igdel.com"
-  phone = "+34 654 89 09 99"
+  description = "Ignacio - Android Developer & AI Engineer with 5+ years programming experience. Specialized in mobile development, machine learning automation, and open-source projects in Valencia, Spain."
+  author = "Ignacio"
+  email = "hi@ignacio.tech"
   
 [menu]
   [[menu.main]]

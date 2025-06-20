@@ -30,71 +30,8 @@
       html.className = savedTheme === 'dark' ? 'dark-mode' : 'light-mode';
     }
 
-    // Create floating particles
-    function createParticles() {
-      const particlesContainer = document.querySelector('.particles');
-      if (!particlesContainer) return;
-
-      for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          
-          // Animate skill progress bars
-          const progressBars = entry.target.querySelectorAll('.skill-progress');
-          progressBars.forEach(bar => {
-            bar.classList.add('animate');
-          });
-
-          // Animate counters
-          const statNumbers = entry.target.querySelectorAll('.stat-number');
-          statNumbers.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-target'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-            
-            const counter = () => {
-              current += step;
-              if (current < target) {
-                stat.textContent = Math.floor(current);
-                requestAnimationFrame(counter);
-              } else {
-                stat.textContent = target;
-              }
-            };
-            counter();
-          });
-        }
-      });
-    }, observerOptions);
-
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', () => {
-      createParticles();
-      
-      // Observe all scroll-animate elements
-      document.querySelectorAll('.scroll-animate').forEach(el => {
-        observer.observe(el);
-      });
-
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -108,15 +45,6 @@
           }
         });
       });
-    });
-
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero');
-      if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
     });
   </script>
 </body>
