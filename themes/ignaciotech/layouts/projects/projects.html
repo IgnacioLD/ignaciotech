@@ -37,6 +37,7 @@
             {{ end }}
           </div>
           {{ end }}
+          {{/* No extra data fallback when page exists */}}
           
           {{ else }}
           <div class="project-image-placeholder">
@@ -47,7 +48,6 @@
             {{ end }}
           </div>
           <h3>{{ .name }}</h3>
-          {{ end }}
           <p>{{ .description }}</p>
           <div class="skills-list">
             {{ range .skills }}
@@ -63,6 +63,7 @@
             </a>
             {{ end }}
           </div>
+          {{ end }}
           {{ end }}
         </div>
         {{ end }}

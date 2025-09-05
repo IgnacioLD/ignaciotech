@@ -85,21 +85,5 @@
       });
       pre.appendChild(btn);
     });
-    const revealTargets = [
-      ...document.querySelectorAll(".card"),
-      ...document.querySelectorAll(".timeline-item"),
-      ...document.querySelectorAll(".projects-section"),
-      ...document.querySelectorAll(".blog-nav-link")
-    ];
-    revealTargets.forEach((el) => el.classList.add("reveal-on-scroll"));
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("revealed");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
-    revealTargets.forEach((el) => io.observe(el));
   });
 })();
