@@ -4,7 +4,7 @@ date: 2024-02-15
 tags: ["Open Source", "Team Leadership", "Project Management", "Android Development"]
 categories: ["Open Source", "Team Leadership"]
 description: "Insights from leading a 6 member open source team building animal shelter management software"
-image: "/images/placeholders/blog-edit.svg"
+image: "/images/imported/hackapet.webp"
 featured: true
 readtime: "6 min read"
 level: "Management"
