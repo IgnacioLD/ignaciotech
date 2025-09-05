@@ -9,9 +9,9 @@
     <p class="section-subtitle">{{ .Description }}</p>
     
     <!-- Featured Projects -->
-    <div class="projects-section">
+    <div class="projects-section featured-projects">
       <h2 class="projects-section-title">Featured Projects</h2>
-      <ul class="post-list--media">
+      <div class="card-grid">
         {{ range $projects.projects }}
         {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
         {{ $p2 := site.GetPage (print "projects/" .slug) }}
@@ -71,9 +71,9 @@
     </div>
     
     <!-- All Projects -->
-    <div class="projects-section">
+    <div class="projects-section all-projects">
       <h2 class="projects-section-title">All Projects</h2>
-      <div class="card-grid">
+      <ul class="post-list--media">
         {{ $s := newScratch }}
         {{ range $projects.projects }}{{ $s.Add "featuredSlugs" (slice .slug) }}{{ end }}
         {{ $featuredSlugs := $s.Get "featuredSlugs" }}

@@ -10,8 +10,12 @@
         <ul class="post-list">
           {{ range first 10 $pages.Pages }}
           <li class="post-item">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            <div class="post-item-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
+            <div class="post-item-date">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            </div>
           </li>
           {{ end }}
         </ul>

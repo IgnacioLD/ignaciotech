@@ -4,29 +4,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileOverlay = document.getElementById('mobile-overlay');
+  
   if (burger && mobileMenu && mobileOverlay) {
     const closeMenu = () => {
       mobileMenu.classList.remove('open');
       mobileMenu.setAttribute('hidden', '');
       mobileOverlay.setAttribute('hidden', '');
+      burger.classList.remove('active');
       burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     };
+    
     const openMenu = () => {
       mobileMenu.classList.add('open');
       mobileMenu.removeAttribute('hidden');
       mobileOverlay.removeAttribute('hidden');
+      burger.classList.add('active');
       burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     };
+    
     burger.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('open')) closeMenu(); else openMenu();
+      if (mobileMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
+    
+    // Close menu when clicking on a link
     mobileMenu.addEventListener('click', (e) => {
-      if (e.target.closest('a')) closeMenu();
+      if (e.target.closest('a')) {
+        closeMenu();
+      }
     });
+    
+    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
     });
+    
+    // Close menu when clicking overlay
     mobileOverlay.addEventListener('click', closeMenu);
+    
+    // Close menu on window resize if open
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
   }
   // Make whole cards clickable via data-href, without breaking inner links
   const interactiveSkip = (el) => !!el.closest('a, button, .project-links, .copy-code-btn');

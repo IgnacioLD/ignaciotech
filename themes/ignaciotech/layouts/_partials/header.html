@@ -3,11 +3,15 @@
     <img src="/logo.svg" alt="" class="logo-img" aria-hidden="true">
     <span class="logo-text">{{ site.Title }}</span>
   </a>
-  <nav>
-    <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menu">
-      ☰ Menu
+  <nav class="navbar-nav">
+    <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </button>
-    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    <div class="nav-desktop">
+      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
   </nav>
   <div class="header-controls">
     {{/* Language switcher hidden (Spanish disabled) */}}

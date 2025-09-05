@@ -2,24 +2,25 @@
 <section class="content-section">
   <div class="container">
     <h1 class="section-title">{{ .Title }}</h1>
+    
     {{ $posts := where .Site.RegularPages "Section" "blog" }}
-    {{ $groups := $posts | groupByDate "2006-01" }}
-    <ul class="post-list">
-      {{ range $groups }}
-      <li class="post-item" style="display:block; border-bottom:none; padding:0; margin-bottom:1rem;">
-        <strong>{{ (time .Key).Format "January 2006" }}</strong>
-        <ul class="post-list">
-          {{ range .Pages }}
-          <li class="post-item">
+    {{ range ($posts.GroupByDate "2006-01") }}
+    <div class="archive-group">
+      <h2 class="archive-month">{{ (time (print .Key "-01")).Format "January 2006" }}</h2>
+      <ul class="post-list">
+        {{ range .Pages }}
+        <li class="post-item">
+          <div class="post-item-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+          <div class="post-item-date">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-          </li>
-          {{ end }}
-        </ul>
-      </li>
-      {{ end }}
-    </ul>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}
-
