@@ -557,6 +557,18 @@ h3 {
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
+/* Ensure button-like anchors keep intended color in visited state */
+a.cta-button:link,
+a.cta-button:visited { color: white; }
+a.cta-button.secondary:link,
+a.cta-button.secondary:visited { color: var(--text-color); }
+a.cta-outline:link,
+a.cta-outline:visited { color: var(--primary-color); }
+.project-link:link,
+.project-link:visited { color: var(--primary-color); }
+.share-button:link,
+.share-button:visited { color: var(--text-color); }
+
 /* Hide duplicate dark mode toggle inside collapsible mobile menu */
 .mobile-menu .dark-mode-toggle { display: none !important; }
 
