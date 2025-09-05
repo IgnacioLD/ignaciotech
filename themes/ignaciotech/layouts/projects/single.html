@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article class="project-detail content-section">
+  <div class="container">
+    <header class="project-header">
+      <h1 class="project-title">{{ .Title }}</h1>
+      <div class="project-meta">
+        {{ with .Params.status }}<span class="project-status status-{{ . }}">{{ . }}</span>{{ end }}
+        {{ with .Date }}<time>{{ .Format "January 2006" }}</time>{{ end }}
+        {{ with .Params.tech }}
+        <div class="skills-list">
+          {{ range . }}
+          <span class="skill-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+    
+    {{ if and .Params.image (ne .Params.image "/images/placeholders/project-apps.svg") }}
+    <div class="blog-hero">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-hero-image">
+    </div>
+    {{ end }}
+    
+    <div class="project-content">
+      {{ .Content }}
+    </div>
+    
+    {{ with .Params.links }}
+    <div class="project-links-section">
+      <h3>Project Links</h3>
+      <div class="project-links">
+        {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+            <span>{{ .name }}</span>
+            <span class="link-icon">↗</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="share-buttons">
+      <span class="share-label">Share:</span>
+      <a class="share-button" href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer">X</a>
+      <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="share-button" href="https://www.reddit.com/submit?url={{ .Permalink }}&title={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer">Reddit</a>
+    </div>
+
+    <footer class="project-footer">
+      <div class="project-back">
+        <a href="/projects/" class="cta-button">Back to Projects</a>
+      </div>
+    </footer>
+  </div>
+</article>
+{{ end }}

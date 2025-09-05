@@ -1,31 +1,46 @@
 baseURL = 'https://ignacio.tech'
-languageCode = 'en-us'
-title = 'ignacio.tech'
+defaultContentLanguage = 'en'
 theme = 'ignaciotech'
 
-[params]
-  description = "Ignacio - Android Developer & AI Engineer with 5+ years programming experience. Specialized in mobile development, machine learning automation, and open-source projects in Valencia, Spain."
-  author = "Ignacio"
-  email = "hi@ignacio.tech"
-  
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
+[languages]
+  [languages.en]
+    languageCode = 'en-us'
+    title = 'Ignacio Loyola'
     weight = 1
-  [[menu.main]]
-    name = "About"
-    url = "#about"
-    weight = 2
-  [[menu.main]]
-    name = "Experience"
-    url = "#experience"
-    weight = 3
-  [[menu.main]]
-    name = "Projects"
-    url = "#projects"
-    weight = 4
-  [[menu.main]]
-    name = "Contact"
-    url = "#contact"
-    weight = 5
+    [languages.en.params]
+      description = "Ignacio Loyola - Android Developer & AI Engineer with 5+ years programming experience. Specialized in mobile development, machine learning automation, and open-source projects in Valencia, Spain."
+      author = "Ignacio Loyola"
+      email = "hi@ignacio.tech"
+    [[languages.en.menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 1
+    [[languages.en.menu.main]]
+      name = "Blog"
+      url = "/blog/"
+      weight = 2
+    [[languages.en.menu.main]]
+      name = "All Projects"
+      url = "/projects/"
+      weight = 3
+
+#  [languages.es]
+#    languageCode = 'es-es'
+#    title = 'Ignacio Loyola'
+#    weight = 2
+#    [languages.es.params]
+#      description = "Ignacio Loyola - Desarrollador Android e Ingeniero de IA con más de 5 años de experiencia en programación. Especializado en desarrollo móvil, automatización de aprendizaje automático y proyectos de código abierto en Valencia, España."
+#      author = "Ignacio Loyola"
+#      email = "hi@ignacio.tech"
+#    [[languages.es.menu.main]]
+#      name = "Inicio"
+#      url = "/"
+#      weight = 1
+#    [[languages.es.menu.main]]
+#      name = "Blog"
+#      url = "/blog/"
+#      weight = 2
+#    [[languages.es.menu.main]]
+#      name = "Todos los Proyectos"
+#      url = "/projects/"
+#      weight = 3

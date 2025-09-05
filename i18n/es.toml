@@ -1,0 +1,28 @@
+[hero]
+subtitle = "Ingeniero de Software y Especialista en IA"
+cta = "Colaboremos"
+
+[about]
+title = "Sobre Mí"
+subtitle = "Ingeniero de software con más de 5 años de experiencia en desarrollo Android y automatización de IA. Liderando proyectos de código abierto en España y colaborando con equipos internacionales."
+
+[skills]
+mobile_title = "Desarrollo Móvil"
+mobile_desc = "Desarrollador Android experto con arquitectura moderna y enfoque en accesibilidad."
+ai_title = "IA y Automatización"
+ai_desc = "Construyendo herramientas de automatización basadas en IA y soluciones de IA generativa."
+community_title = "Código Abierto y Comunidad"
+community_desc = "Liderando proyectos colaborativos y estableciendo colaboraciones con hackerspaces."
+
+[projects]
+title = "Proyectos Destacados"
+subtitle = "Proyectos de código abierto y profesionales que demuestran innovación en desarrollo móvil y automatización de IA."
+
+[experience]
+title = "Experiencia"
+subtitle = "Experiencia profesional en programación con enfoque en desarrollo Android y soluciones de IA en varias industrias."
+
+[contact]
+title = "Colaboremos"
+subtitle = "Siempre estoy interesado en nuevas oportunidades y proyectos interesantes. No dudes en contactarme si te gustaría colaborar."
+cta = "Enviar Mensaje"

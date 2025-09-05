@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desarrollo Android on Ignacio Loyola</title>
+    <link>http://localhost:1313/tags/desarrollo-android/</link>
+    <description>Recent content in Desarrollo Android on Ignacio Loyola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/desarrollo-android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Liderando Hackapet: Lecciones de Gestión en Código Abierto</title>
+      <link>http://localhost:1313/es/blog/leading-hackapet-open-source/</link>
+      <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/blog/leading-hackapet-open-source/</guid>
+      <description>&lt;p&gt;Liderar Hackapet ha sido una experiencia increíble de colaboración abierta y gestión remota. Coordinar 16+ contribuyentes con husos horarios y perfiles distintos me enseñó mucho sobre liderazgo y construcción de comunidad.&lt;/p&gt;&#xA;&lt;h2 id=&#34;construyendo-el-equipo&#34;&gt;Construyendo el Equipo&lt;/h2&gt;&#xA;&lt;h3 id=&#34;perfiles-clave&#34;&gt;Perfiles Clave&lt;/h3&gt;&#xA;&lt;p&gt;El éxito no vino solo de la experiencia técnica, sino de la motivación y diversidad:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Android&lt;/strong&gt; para apps móviles&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Web&lt;/strong&gt; para panel de gestión&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;UX&lt;/strong&gt; con comprensión de flujos en refugios&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Estudiantes de veterinaria&lt;/strong&gt; con conocimiento del dominio&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Voluntariado&lt;/strong&gt; para pruebas reales&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;onboarding&#34;&gt;Onboarding&lt;/h3&gt;&#xA;&lt;p&gt;Hicimos que la entrada fuera clara y gradual:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

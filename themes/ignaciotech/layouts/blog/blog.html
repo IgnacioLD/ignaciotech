@@ -1,0 +1,41 @@
+{{ define "main" }}
+<section class="content-section">
+  <div class="container">
+    <h1 class="section-title">{{ .Title }}</h1>
+    <p class="section-subtitle">{{ .Description }}</p>
+    
+    <div class="card-grid">
+      {{ range .Site.RegularPages }}
+        {{ if eq .Section "blog" }}
+        <div class="card" data-href="{{ .RelPermalink }}" role="link" tabindex="0">
+          <a href="{{ .RelPermalink }}" class="card-preview-link" aria-label="Open {{ .Title }}">
+            <div class="project-image-placeholder">
+              {{ if .Params.image }}
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="project-preview-image">
+              {{ else }}
+                <img src="/images/placeholders/blog-edit.svg" alt="{{ .Title }}" class="project-preview-image">
+              {{ end }}
+            </div>
+          </a>
+          
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Summary | truncate 120 }}</p>
+          
+          {{ with .Params.tags }}
+          <div class="skills-list">
+            {{ range (first 3 .) }}
+            <span class="skill-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          <div class="blog-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Todos los Proyectos on Ignacio Loyola</title>
+    <link>http://localhost:1313/es/projects/</link>
+    <description>Recent content in Todos los Proyectos on Ignacio Loyola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Augen: Asistente de Visión con IA</title>
+      <link>http://localhost:1313/es/projects/augen/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/projects/augen/</guid>
+      <description>&lt;h1 id=&#34;augen-asistente-de-visión-con-ia-para-accesibilidad&#34;&gt;Augen: Asistente de Visión con IA para Accesibilidad&lt;/h1&gt;&#xA;&lt;p&gt;Augen es un asistente de visión impulsado por IA, diseñado para mejorar la accesibilidad de personas con discapacidad visual. Combina modelos avanzados de visión por computador con un flujo de interacción por voz para describir escenas en tiempo real y ayudar con tareas de navegación y reconocimiento.&lt;/p&gt;&#xA;&lt;h2 id=&#34;funcionalidades-clave&#34;&gt;Funcionalidades Clave&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Análisis de Escena en Tiempo Real&lt;/strong&gt;: Modelos de visión describen el entorno con lenguaje natural.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Interacción por Voz&lt;/strong&gt;: Comandos de voz y lectura en voz alta (TTS) integrados en el navegador.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Multilingüe&lt;/strong&gt;: Disponible en 12 idiomas, pensado para audiencias globales.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Diseño Accesible&lt;/strong&gt;: Construido con cumplimiento WCAG 2.1 AA desde la base.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Multiplataforma&lt;/strong&gt;: Funciona en navegadores modernos como PWA con uso offline.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;pila-tecnológica&#34;&gt;Pila Tecnológica&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: Arquitectura PWA para carga rápida y funcionamiento sin conexión.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Visión con IA&lt;/strong&gt;: Integración con APIs de visión de última generación.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Voz&lt;/strong&gt;: Web Speech API para reconocimiento y síntesis.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Accesibilidad&lt;/strong&gt;: Compatibilidad con lectores de pantalla y navegación por teclado.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Internacionalización&lt;/strong&gt;: Framework i18n con soporte RTL.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;impacto-y-objetivos&#34;&gt;Impacto y Objetivos&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Independencia&lt;/strong&gt;: Facilitar la navegación del entorno sin asistencia.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Inclusión&lt;/strong&gt;: Hacer la tecnología más usable y universal.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Educación&lt;/strong&gt;: Apoyar el aprendizaje de orientación espacial.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Comunidad&lt;/strong&gt;: Colaborar con organizaciones y usuarios reales.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;estado-actual&#34;&gt;Estado Actual&lt;/h2&gt;&#xA;&lt;p&gt;Proyecto activo, iterando con feedback de la comunidad. Priorizamos mejoras de precisión, nuevos idiomas, y pulido de UX accesible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hackapet: Gestión de Refugios de Animales de Código Abierto</title>
+      <link>http://localhost:1313/es/projects/hackapet/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/projects/hackapet/</guid>
+      <description>&lt;h1 id=&#34;hackapet-modernizando-la-gestión-en-refugios-de-animales&#34;&gt;Hackapet: Modernizando la Gestión en Refugios de Animales&lt;/h1&gt;&#xA;&lt;p&gt;Hackapet es una iniciativa de código abierto para modernizar la operación de refugios. Lidero un equipo diverso de 16+ colaboradores, centrado en construir herramientas que mejoren la eficiencia administrativa y el bienestar animal.&lt;/p&gt;&#xA;&lt;h2 id=&#34;visión-del-proyecto&#34;&gt;Visión del Proyecto&lt;/h2&gt;&#xA;&lt;p&gt;Los refugios enfrentan restricciones de recursos y procesos desactualizados. Hackapet aporta herramientas modernas y fáciles de usar para optimizar tareas, coordinar equipos y mejorar resultados de adopción.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CountIn: Control de Aforo en Tiempo Real</title>
+      <link>http://localhost:1313/es/projects/countin/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/projects/countin/</guid>
+      <description>&lt;h1 id=&#34;countin-gestión-inteligente-de-capacidad&#34;&gt;CountIn: Gestión Inteligente de Capacidad&lt;/h1&gt;&#xA;&lt;p&gt;CountIn ayuda a organizadores a monitorear el aforo en tiempo real, cumplir normativa y optimizar recursos del recinto.&lt;/p&gt;&#xA;&lt;h2 id=&#34;características&#34;&gt;Características&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Entradas Múltiples&lt;/strong&gt; con sincronización en vivo entre dispositivos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Modo Offline&lt;/strong&gt; con cola de sincronización.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Alertas&lt;/strong&gt; al aproximarse a la capacidad máxima.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Históricos y Exportación&lt;/strong&gt; para análisis.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;implementación-técnica&#34;&gt;Implementación Técnica&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Arquitectura&lt;/strong&gt;: MVVM, Repositorios y DI (Hilt).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Datos&lt;/strong&gt;: Room local + Firebase Realtime Database.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fondo&lt;/strong&gt;: WorkManager para tareas críticas.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;UI&lt;/strong&gt;: Material Design 3 + Compose.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;resultados&#34;&gt;Resultados&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sincronización en Tiempo Real&lt;/strong&gt; sin conflictos.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Diseño Offline-First&lt;/strong&gt; robusto.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Óptimo en Batería&lt;/strong&gt; y rendimiento fluido.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Más información y código en el &lt;a href=&#34;https://github.com/igdel/countin-android&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

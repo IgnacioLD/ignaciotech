@@ -1,0 +1,109 @@
+{{ define "main" }}
+{{ $projects := site.Data.projects }}
+{{ if eq site.Language.Lang "es" }}
+  {{ $projects = site.Data.es.projects }}
+{{ end }}
+<section class="content-section">
+  <div class="container">
+    <h1 class="section-title">{{ .Title }}</h1>
+    <p class="section-subtitle">{{ .Description }}</p>
+    
+    <!-- Featured Projects -->
+    <div class="projects-section">
+      <h2 class="projects-section-title">Featured Projects</h2>
+      <div class="card-grid">
+        {{ range $projects.projects }}
+        {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
+        {{ $p2 := site.GetPage (print "projects/" .slug) }}
+        {{ $page := or $p1 $p2 }}
+        <div class="card" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
+          {{ if $page }}
+          <a href="{{ $page.RelPermalink }}" class="card-preview-link" aria-label="Open {{ .name }}">
+            <div class="project-image-placeholder">
+              {{ if .image }}
+                <img src="{{ .image }}" alt="{{ .name }}" class="project-preview-image">
+              {{ else }}
+                <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
+              {{ end }}
+            </div>
+          </a>
+          <h3><a href="{{ $page.RelPermalink }}">{{ .name }}</a></h3>
+          {{ with $page.Params.status }}<div class="project-status status-{{ . }}" style="display:inline-block; margin-bottom: 0.5rem;">{{ . }}</div>{{ end }}
+          <p>{{ $page.Params.description | default ($page.Summary | truncate 140) }}</p>
+          {{ with $page.Params.tech }}
+          <div class="skills-list">
+            {{ range (first 3 .) }}
+            <span class="skill-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          {{ else }}
+          <div class="project-image-placeholder">
+            {{ if .image }}
+              <img src="{{ .image }}" alt="{{ .name }}" class="project-preview-image">
+            {{ else }}
+              <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
+            {{ end }}
+          </div>
+          <h3>{{ .name }}</h3>
+          {{ end }}
+          <p>{{ .description }}</p>
+          <div class="skills-list">
+            {{ range .skills }}
+            <span class="skill-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ if .links }}
+          <div class="project-links">
+            {{ range .links }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+              <span>{{ .name }}</span>
+              <span class="link-icon">↗</span>
+            </a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    
+    <!-- All Projects -->
+    <div class="projects-section">
+      <h2 class="projects-section-title">All Projects</h2>
+      <div class="card-grid">
+        {{ $s := newScratch }}
+        {{ range $projects.projects }}{{ $s.Add "featuredSlugs" (slice .slug) }}{{ end }}
+        {{ $featuredSlugs := $s.Get "featuredSlugs" }}
+        {{ range .Site.RegularPages }}
+          {{ $pSlug := .File.BaseFileName }}
+          {{ if and (eq .Section "projects") (not (in $featuredSlugs $pSlug)) }}
+          <div class="card" data-href="{{ .RelPermalink }}" role="link" tabindex="0">
+            <a href="{{ .RelPermalink }}" class="card-preview-link" aria-label="Open {{ .Title }}">
+              <div class="project-image-placeholder">
+                {{ if .Params.image }}
+                  <img src="{{ .Params.image }}" alt="{{ .Title }}" class="project-preview-image">
+                {{ else }}
+                  <img src="/images/placeholders/project-apps.svg" alt="{{ .Title }}" class="project-preview-image">
+                {{ end }}
+             </div>
+           </a>
+           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+           <p>{{ .Params.description | default (.Summary | truncate 120) }}</p>
+           {{ with .Params.tech }}
+           <div class="skills-list">
+             {{ range (first 3 .) }}
+             <span class="skill-tag">{{ . }}</span>
+             {{ end }}
+           </div>
+           {{ end }}
+          
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

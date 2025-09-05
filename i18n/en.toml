@@ -1,0 +1,28 @@
+[hero]
+subtitle = "Software Engineer & AI Specialist"
+cta = "Get In Touch"
+
+[about]
+title = "About Me"
+subtitle = "Software engineer with 5+ years experience in Android development and AI automation. Leading open-source projects in Spain and collaborating with international teams."
+
+[skills]
+mobile_title = "Mobile Development"
+mobile_desc = "Expert Android developer with modern architecture and accessibility focus."
+ai_title = "AI & Automation"
+ai_desc = "Building AI-powered automation tools and generative AI solutions."
+community_title = "Open Source & Community"
+community_desc = "Leading collaborative projects and establishing hackerspaces collaborations."
+
+[projects]
+title = "Featured Projects"
+subtitle = "Open-source and professional projects that showcase innovation in mobile development and AI automation."
+
+[experience]
+title = "Experience"
+subtitle = "Professional programming experience with focus on Android development and AI solutions across various industries."
+
+[contact]
+title = "Let's Collaborate"
+subtitle = "I'm always interested in new opportunities and interesting projects. Feel free to reach out if you'd like to collaborate."
+cta = "Send Message"

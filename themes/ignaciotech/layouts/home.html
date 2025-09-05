@@ -1,61 +1,52 @@
 {{ define "main" }}
+{{ $projects := site.Data.projects }}
+{{ if eq site.Language.Lang "es" }}
+  {{ $projects = site.Data.es.projects }}
+{{ end }}
+
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content animate-fade-in">
-    <h1>Ignacio</h1>
-    <p class="subtitle">Software Engineer & AI Specialist</p>
-    <p class="description">
-      5+ years of programming experience. Specialized in Android development 
-      and creating innovative solutions with generative AI. Leading open-source projects 
-      and developing automation tools that optimize workflows.
-    </p>
-    <a href="#contact" class="cta-button">Get In Touch</a>
+    <h1>Ignacio Loyola</h1>
+    <p class="subtitle">{{ i18n "hero.subtitle" }}</p>
+    <a href="mailto:hi@ignacio.tech" class="cta-button">{{ i18n "hero.cta" }}</a>
   </div>
 </section>
 
 <!-- About Section -->
 <section id="about" class="content-section">
   <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-subtitle">
-      Passionate software engineer with 5+ years of programming experience in Android development, AI automation, and various domains. 
-      Multilingual professional with experience in international teams across Spain, Portugal, Poland, India, and the UK.
-    </p>
+    <h2 class="section-title">{{ i18n "about.title" }}</h2>
+    <p class="section-subtitle">{{ i18n "about.subtitle" }}</p>
     
     <div class="card-grid">
       <div class="card">
-        <h3>Mobile Development</h3>
-        <p>Expert in Android development with modern architecture patterns and accessibility standards.</p>
+        <h3>{{ i18n "skills.mobile_title" }}</h3>
+        <p>{{ i18n "skills.mobile_desc" }}</p>
         <div class="skills-list">
           <span class="skill-tag">Android</span>
           <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">MVVM</span>
-          <span class="skill-tag">Jetpack</span>
           <span class="skill-tag">A11y</span>
         </div>
       </div>
       
       <div class="card">
-        <h3>AI & Automation</h3>
-        <p>Designing and implementing AI-powered automation tools and generative AI solutions.</p>
+        <h3>{{ i18n "skills.ai_title" }}</h3>
+        <p>{{ i18n "skills.ai_desc" }}</p>
         <div class="skills-list">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">AI Automation</span>
           <span class="skill-tag">GenAI</span>
-          <span class="skill-tag">REST APIs</span>
         </div>
       </div>
       
       <div class="card">
-        <h3>Languages & Leadership</h3>
-        <p>Multilingual professional with experience mentoring teams and leading open-source projects.</p>
+        <h3>{{ i18n "skills.community_title" }}</h3>
+        <p>{{ i18n "skills.community_desc" }}</p>
         <div class="skills-list">
-          <span class="skill-tag">Spanish (Native)</span>
-          <span class="skill-tag">English (C1+)</span>
-          <span class="skill-tag">French (C1.1)</span>
-          <span class="skill-tag">German (B1)</span>
-          <span class="skill-tag">Mentoring</span>
+          <span class="skill-tag">Open Source</span>
+          <span class="skill-tag">Project Leadership</span>
+          <span class="skill-tag">Community</span>
         </div>
       </div>
     </div>
@@ -65,95 +56,55 @@
 <!-- Projects Section -->
 <section id="projects" class="content-section">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-subtitle">
-      Open-source and professional projects that showcase innovation in mobile development and AI automation.
-    </p>
+    <h2 class="section-title">{{ i18n "projects.title" }}</h2>
+    <p class="section-subtitle">{{ i18n "projects.subtitle" }}</p>
     
     <div class="card-grid">
-      <div class="card">
-        <h3>Hackapet</h3>
-        <p>Open-source software development project for animal shelters with mobile and web components. Leading a team of 16+ interdisciplinary members including DevOps, Mobile/Web Development, Management, and Design.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Android</span>
-          <span class="skill-tag">Web</span>
-          <span class="skill-tag">Open Source</span>
-          <span class="skill-tag">Team Leadership</span>
+      {{ range $projects.projects }}
+      {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
+      {{ $p2 := site.GetPage (print "projects/" .slug) }}
+      {{ $page := or $p1 $p2 }}
+      <div class="card" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
+        {{ if $page }}
+        <a href="{{ $page.RelPermalink }}" class="card-preview-link" aria-label="Open {{ .name }}">
+          <div class="project-image-placeholder">
+            {{ if .image }}
+              <img src="{{ .image }}" alt="{{ .name }}" class="project-preview-image">
+            {{ else }}
+              <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
+            {{ end }}
+          </div>
+        </a>
+        <h3><a href="{{ $page.RelPermalink }}">{{ .name }}</a></h3>
+        {{ else }}
+        <div class="project-image-placeholder">
+          {{ if .image }}
+            <img src="{{ .image }}" alt="{{ .name }}" class="project-preview-image">
+          {{ else }}
+            <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
+          {{ end }}
         </div>
+        <h3>{{ .name }}</h3>
+        {{ end }}
+        <p>{{ .description }}</p>
+        <div class="skills-list">
+          {{ range .skills }}
+          <span class="skill-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        
+        {{ if .links }}
         <div class="project-links">
-          <a href="https://github.com/hackapet-project" target="_blank" rel="noopener noreferrer" class="project-link">
-            <span>GitHub</span>
+          {{ range .links }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+            <span>{{ .name }}</span>
             <span class="link-icon">↗</span>
           </a>
+          {{ end }}
         </div>
+        {{ end }}
       </div>
-      
-      <div class="card">
-        <h3>CountIn</h3>
-        <p>Real-time event occupancy tracker for Android that monitors venue capacity to ensure crowd safety and staff coordination at events. Built with modern Android architecture and clean code principles.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Android</span>
-          <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Real-Time</span>
-          <span class="skill-tag">Clean Architecture</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/igdel/countin-android" target="_blank" rel="noopener noreferrer" class="project-link">
-            <span>GitHub</span>
-            <span class="link-icon">↗</span>
-          </a>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h3>Nomble</h3>
-        <p>Baby name search engine with insights and trends. A comprehensive web platform that helps parents discover names with meaning, popularity data, and compatibility tools built with Next.js.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Web App</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">TypeScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://usenomble.com" target="_blank" rel="noopener noreferrer" class="project-link">
-            <span>Live Site</span>
-            <span class="link-icon">↗</span>
-          </a>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h3>AI Automation Tools</h3>
-        <p>Python-based automation tools that streamline development workflows across programming, project management, and QA processes for banking applications.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">AI Automation</span>
-          <span class="skill-tag">Workflow Optimization</span>
-          <span class="skill-tag">Banking</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h3>Banking App Accessibility</h3>
-        <p>Implementation of Mobile A11y standards for visually impaired users in Santander banking app, including TalkBack support and comprehensive QA testing preparation.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Android A11y</span>
-          <span class="skill-tag">TalkBack</span>
-          <span class="skill-tag">Banking</span>
-          <span class="skill-tag">QA</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h3>Banking Support Systems</h3>
-        <p>Support panel and FAQ features for multinational banking ecosystem serving Spain, Portugal, Poland, and UK markets with backend API integrations.</p>
-        <div class="skills-list">
-          <span class="skill-tag">Android</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">Multinational</span>
-          <span class="skill-tag">Banking</span>
-        </div>
-      </div>
+      {{ end }}
     </div>
   </div>
 </section>
@@ -168,111 +119,31 @@
     </p>
     
     <div class="timeline">
+      {{ range site.Data.experience.experience }}
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <div class="timeline-date">Jul 2023 - Present</div>
-          <h3>AI Engineer | SSr Android Developer</h3>
-          <h4>Globant for Santander Banking App</h4>
-          <p>Designed and implemented AI-powered automation tools using Python scripts. Implemented Mobile A11y standards for visually impaired users and developed support panel features for banking ecosystem across Spain, Portugal, Poland, and UK.</p>
+          <div class="timeline-date">{{ .date }}</div>
+          <h3>{{ .title }}</h3>
+          <h4>{{ .company }}</h4>
+          <p>{{ .description }}</p>
           <div class="skills-list">
-            <span class="skill-tag">AI Automation</span>
-            <span class="skill-tag">Android A11y</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Banking</span>
+            {{ range .skills }}
+            <span class="skill-tag">{{ . }}</span>
+            {{ end }}
           </div>
         </div>
       </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Nov 2022 - Jul 2023</div>
-          <h3>Mid-level Android Developer</h3>
-          <h4>Sopra Steria</h4>
-          <p>Contributed to white-label banking app framework with 20+ Android developers. Collaborated with backend engineers on API design and implemented features using MVVM architecture and Jetpack libraries.</p>
-          <div class="skills-list">
-            <span class="skill-tag">Android</span>
-            <span class="skill-tag">MVVM</span>
-            <span class="skill-tag">Jetpack</span>
-            <span class="skill-tag">API Design</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Mar 2020 - Nov 2022</div>
-          <h3>Mid-level Android Developer</h3>
-          <h4>RUDO (Laberit)</h4>
-          <p>Led internship program with 8/12 successful integrations across 3 promotions. Developed 14 diverse Android projects and created comprehensive Knowledge Management System with mentoring focus.</p>
-          <div class="skills-list">
-            <span class="skill-tag">Team Leadership</span>
-            <span class="skill-tag">Mentoring</span>
-            <span class="skill-tag">Android</span>
-            <span class="skill-tag">KMS</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">2021 - Present</div>
-          <h3>Organizer & Mentor</h3>
-          <h4>Hackerspace Valencia</h4>
-          <p>Mentored 5+ community members and led Hackapet open-source project for animal shelters. Established inter-hackerspace collaborations and spearheaded innovative projects using Python and TypeScript.</p>
-          <div class="skills-list">
-            <span class="skill-tag">Open Source</span>
-            <span class="skill-tag">Community</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">TypeScript</span>
-          </div>
-        </div>
-      </div>
+      {{ end }}
     </div>
   </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials-section content-section">
-  <div class="container">
-    <h2 class="section-title">What Others Say</h2>
-    <p class="section-subtitle">Recommendations from colleagues and collaborators</p>
-    
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <p>"Ignacio's influence on my learning has been invaluable. His ability to explain complex concepts clearly and his willingness to help others have been fundamental in my professional development. His methodical approach and positive attitude make learning from him an enriching experience."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-info">
-            <div class="author-name">Ismael NV</div>
-            <div class="author-role">Business | Development, Data & AI</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="testimonial-content">
-          <p>"Ignacio consistently displayed exceptional skills and dedication. His ability to communicate effectively and work seamlessly within our team ensured smooth collaboration and successful outcomes. His proactive nature and attention to detail significantly enhanced our project success."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-info">
-            <div class="author-name">Daler Bekov</div>
-            <div class="author-role">QA Tester at Sopra Steria</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Contact Section -->
 <section id="contact" class="content-section">
   <div class="container">
-    <h2 class="section-title">Let's Work Together</h2>
+    <h2 class="section-title">Let's Collaborate</h2>
     <p class="section-subtitle">
       I'm always interested in new opportunities and interesting projects.
       Feel free to reach out if you'd like to collaborate.

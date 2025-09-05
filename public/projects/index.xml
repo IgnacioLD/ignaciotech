@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>All Projects on Ignacio Loyola</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in All Projects on Ignacio Loyola</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Augen: AI Vision Assistant</title>
+      <link>http://localhost:1313/projects/augen/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/augen/</guid>
+      <description>&lt;h1 id=&#34;augen-ai-vision-assistant-for-accessibility&#34;&gt;Augen: AI Vision Assistant for Accessibility&lt;/h1&gt;&#xA;&lt;p&gt;Augen is a cutting-edge AI-powered vision assistant designed to enhance accessibility for visually impaired users. The project combines advanced computer vision technology with natural language processing to provide real-time scene description and navigation assistance.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Real-time Scene Analysis&lt;/strong&gt;: Advanced AI models analyze camera feeds to describe surroundings in natural language&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Voice Interaction&lt;/strong&gt;: Fully accessible voice-based interface with speech recognition and text-to-speech&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Multilingual Support&lt;/strong&gt;: Available in 12 languages to serve a global audience&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Accessibility-First Design&lt;/strong&gt;: Built from the ground up with WCAG 2.1 AA compliance&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cross-Platform&lt;/strong&gt;: Works seamlessly on web browsers with future mobile app planned&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;technology-stack&#34;&gt;Technology Stack&lt;/h2&gt;&#xA;&lt;p&gt;The project leverages modern web technologies and AI services:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hackapet: Open Source Animal Shelter Management</title>
+      <link>http://localhost:1313/projects/hackapet/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/hackapet/</guid>
+      <description>&lt;h1 id=&#34;hackapet-revolutionizing-animal-shelter-management&#34;&gt;Hackapet: Revolutionizing Animal Shelter Management&lt;/h1&gt;&#xA;&lt;p&gt;Hackapet is an ambitious open-source project dedicated to modernizing animal shelter operations through technology. Leading a diverse team of 16+ contributors, we&amp;rsquo;re building comprehensive solutions that help shelters save more lives and operate more efficiently.&lt;/p&gt;&#xA;&lt;h2 id=&#34;project-vision&#34;&gt;Project Vision&lt;/h2&gt;&#xA;&lt;p&gt;Animal shelters worldwide face common challenges: limited resources, outdated systems, and overwhelming administrative tasks. Hackapet addresses these pain points by providing modern, user-friendly tools that streamline shelter operations and improve animal welfare outcomes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CountIn: Real-time Event Occupancy Tracker</title>
+      <link>http://localhost:1313/projects/countin/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/countin/</guid>
+      <description>&lt;h1 id=&#34;countin-smart-event-capacity-management&#34;&gt;CountIn: Smart Event Capacity Management&lt;/h1&gt;&#xA;&lt;p&gt;CountIn is an Android application designed to help event organizers track real-time occupancy levels, ensure safety compliance, and optimize venue utilization. The app combines modern Android development practices with real-time data synchronization to provide accurate, up-to-date attendance information.&lt;/p&gt;&#xA;&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;&#xA;&lt;p&gt;Event organizers face significant challenges in managing capacity limits, especially in the post-pandemic world where accurate occupancy tracking is crucial for:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Safety Compliance&lt;/strong&gt;: Meeting local health and safety regulations&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Crowd Management&lt;/strong&gt;: Preventing overcrowding and ensuring comfort&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Analytics&lt;/strong&gt;: Understanding attendance patterns and peak times&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Resource Planning&lt;/strong&gt;: Optimizing staff allocation and facilities&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;solution-overview&#34;&gt;Solution Overview&lt;/h2&gt;&#xA;&lt;p&gt;CountIn provides a comprehensive solution with multiple entry point tracking, real-time synchronization, and intuitive management interfaces.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

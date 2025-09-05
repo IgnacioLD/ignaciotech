@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" class="dark-mode">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" class="light-mode">
 <head>
   {{ partial "head.html" . }}
 </head>
-<body class="dark-theme">
+<body class="light-theme">
   <header class="header">
     {{ partial "header.html" . }}
   </header>
@@ -24,10 +24,12 @@
       localStorage.setItem('theme', html.classList.contains('dark-mode') ? 'dark' : 'light');
     });
     
-    // Load saved theme
+    // Load saved theme or default to light
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       html.className = savedTheme === 'dark' ? 'dark-mode' : 'light-mode';
+    } else {
+      html.className = 'light-mode';
     }
 
     // Initialize on page load

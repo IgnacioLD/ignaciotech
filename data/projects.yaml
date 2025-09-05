@@ -1,0 +1,37 @@
+projects:
+  - name: "Augen"
+    slug: "augen"
+    description: "AI-Powered Vision Assistant for Accessibility with voice interaction and multilingual support."
+    image: "/images/placeholders/project-apps.svg"
+    skills:
+      - "AI Vision"
+      - "Accessibility"
+      - "12 Languages"
+    links:
+      - name: "Live Demo"
+        url: "https://augen.ignacio.tech"
+        
+  - name: "Hackapet"
+    slug: "hackapet"
+    description: "Open-source project for animal shelters leading a team of 16+ members."
+    image: "/images/placeholders/project-apps.svg"
+    skills:
+      - "Open Source"
+      - "Team Leadership"
+      - "Android"
+    links:
+      - name: "GitHub"
+        url: "https://github.com/hackapet-project"
+        
+  - name: "CountIn"
+    slug: "countin"
+    description: "Real-time event occupancy tracker for Android with modern architecture."
+    image: "/images/placeholders/project-apps.svg"
+    skills:
+      - "Android"
+      - "Kotlin"
+      - "Real-Time"
+    links:
+      - name: "GitHub"
+        url: "https://github.com/igdel/countin-android"
+        

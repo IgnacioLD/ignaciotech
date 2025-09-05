@@ -1,0 +1,57 @@
+{{ define "main" }}
+<article class="blog-post content-section">
+  <div class="container">
+    <header class="blog-header">
+      <h1 class="blog-post-title">{{ .Title }}</h1>
+      <div class="blog-post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ with .Params.tags }}
+        <div class="blog-tags">
+          {{ range . }}
+          <span class="blog-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+    
+    {{ if and .Params.image (ne .Params.image "/images/placeholders/blog-edit.svg") }}
+    <div class="blog-hero">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-hero-image">
+    </div>
+    {{ end }}
+    
+    <div class="blog-content">
+      {{ .Content }}
+    </div>
+    
+    <footer class="blog-footer">
+      <div class="share-buttons">
+        <span class="share-label">Share:</span>
+        <a class="share-button" href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer">X</a>
+        <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="share-button" href="https://www.reddit.com/submit?url={{ .Permalink }}&title={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer">Reddit</a>
+      </div>
+      <div class="blog-navigation">
+        {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="blog-nav-link prev">
+          <span>← Previous</span>
+          <span>{{ .Title }}</span>
+        </a>
+        {{ end }}
+        
+        {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="blog-nav-link next">
+          <span>Next →</span>
+          <span>{{ .Title }}</span>
+        </a>
+        {{ end }}
+      </div>
+      
+      <div class="blog-back">
+        <a href="/blog/" class="cta-button">Back to Blog</a>
+      </div>
+    </footer>
+  </div>
+</article>
+{{ end }}

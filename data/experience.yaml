@@ -1,0 +1,40 @@
+experience:
+  - date: "Jul 2023 - Jul 2025"
+    title: "AI Engineer | SSr Android Developer"
+    company: "Globant for Santander Banking App"
+    description: "Designed and implemented AI-powered automation tools using Python scripts. Implemented Mobile A11y standards for visually impaired users and developed support panel features for banking ecosystem across Spain, Portugal, Poland, and UK."
+    skills:
+      - "AI Automation"
+      - "Android A11y"
+      - "Python"
+      - "Banking"
+      
+  - date: "2021 - Present"
+    title: "Organizer & Mentor"
+    company: "Hackerspace Valencia"
+    description: "Mentored 5+ community members and led Hackapet open-source project for animal shelters. Established inter-hackerspace collaborations and spearheaded innovative projects using Python and TypeScript."
+    skills:
+      - "Open Source"
+      - "Community"
+      - "Python"
+      - "TypeScript"
+      
+  - date: "Nov 2022 - Jul 2023"
+    title: "Mid-level Android Developer"
+    company: "Sopra Steria"
+    description: "Contributed to white-label banking app framework with 20+ Android developers. Collaborated with backend engineers on API design and implemented features using MVVM architecture and Jetpack libraries."
+    skills:
+      - "Android"
+      - "MVVM"
+      - "Jetpack"
+      - "API Design"
+      
+  - date: "Mar 2020 - Nov 2022"
+    title: "Mid-level Android Developer"
+    company: "RUDO (Laberit)"
+    description: "Led internship program with 8/12 successful integrations across 3 promotions. Developed 14 diverse Android projects and created comprehensive Knowledge Management System with mentoring focus."
+    skills:
+      - "Team Leadership"
+      - "Mentoring"
+      - "Android"
+      - "KMS"
