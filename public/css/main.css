@@ -257,13 +257,9 @@ h3 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, 
-    rgba(15, 23, 42, 0.8) 0%, 
-    rgba(30, 41, 59, 0.85) 100%),
-    url('/portrait.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  /* Use pure gradients for lightweight LCP */
+  background: radial-gradient(1200px 800px at 50% 20%, rgba(37, 99, 235, 0.15), transparent 60%),
+              linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.92) 100%);
   color: white;
   position: relative;
   padding: 2rem;
