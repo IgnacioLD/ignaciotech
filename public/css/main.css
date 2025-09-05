@@ -147,7 +147,7 @@ body::before { display: none; }
     background: var(--bg-color);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 1.5rem;
-    z-index: 999;
+    z-index: 1001;
   }
   .mobile-menu .nav-menu {
     display: flex;
@@ -158,6 +158,14 @@ body::before { display: none; }
     padding: 0;
   }
   .mobile-menu .dark-mode-toggle { display: inline-flex; margin-top: 0.5rem; }
+}
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
 }
 
 .nav-menu a {
@@ -493,6 +501,21 @@ h3 {
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
 }
+
+/* Dark mode refinements */
+.dark-mode .skill-tag { background-color: rgba(148,163,184,0.18); color: #e6edf5; border-color: #3b4a66; }
+.dark-mode .project-link { background-color: rgba(148,163,184,0.12); color: #e6edf5; border-color: #3b4a66; }
+.dark-mode .project-link:hover { background-color: #334155; }
+.dark-mode .cta-button { background-color: #1f2937; color: #e6edf5; border-color: #3b4a66; box-shadow: none; }
+.dark-mode .cta-button:hover { background-color: #334155; }
+.dark-mode .cta-outline { color: #e6edf5; border-color: #3b4a66; }
+.dark-mode .cta-outline:hover { background: rgba(148,163,184,0.12); }
+
+/* Media list items */
+.post-list--media { list-style: none; padding: 0; margin: 1rem 0; }
+.post-item--media { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+.post-thumb { width: 72px; height: 54px; border-radius: 6px; border: 1px solid var(--border-color); object-fit: cover; flex: 0 0 auto; }
+.post-item--media .meta { margin-left: auto; color: var(--text-secondary); font-size: 0.875rem; }
 
 /* Project links */
 .project-links {

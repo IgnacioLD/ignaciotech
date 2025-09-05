@@ -4,7 +4,7 @@
     <span class="logo-text">{{ site.Title }}</span>
   </a>
   <nav>
-    <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menu">
       ☰ Menu
     </button>
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
@@ -25,7 +25,7 @@
     </button>
   </div>
 </div>
-<div class="mobile-menu" id="mobile-menu" hidden>
+<div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true">
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
   <button class="dark-mode-toggle" aria-label="Toggle dark mode">
     <span class="dark-icon">
@@ -40,3 +40,4 @@
     </span>
   </button>
 </div>
+<div class="mobile-overlay" id="mobile-overlay" hidden></div>

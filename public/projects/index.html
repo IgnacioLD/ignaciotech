@@ -113,7 +113,7 @@
     <span class="logo-text">Ignacio Loyola</span>
   </a>
   <nav>
-    <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menu">
       ☰ Menu
     </button>
     
@@ -146,7 +146,7 @@
     </button>
   </div>
 </div>
-<div class="mobile-menu" id="mobile-menu" hidden>
+<div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true">
   
   <ul class="nav-menu">
     <li>
@@ -173,6 +173,7 @@
     </span>
   </button>
 </div>
+<div class="mobile-overlay" id="mobile-overlay" hidden></div>
 
   </header>
   <main class="main">
@@ -187,7 +188,7 @@
     
     <div class="projects-section">
       <h2 class="projects-section-title">Featured Projects</h2>
-      <div class="post-list">
+      <ul class="post-list--media">
         
         
         
@@ -338,7 +339,7 @@
           
           
         
-      </div>
+      </ul>
     </div>
   </div>
 </section>

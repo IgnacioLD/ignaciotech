@@ -11,7 +11,7 @@
     <!-- Featured Projects -->
     <div class="projects-section">
       <h2 class="projects-section-title">Featured Projects</h2>
-      <div class="post-list">
+      <ul class="post-list--media">
         {{ range $projects.projects }}
         {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
         {{ $p2 := site.GetPage (print "projects/" .slug) }}
@@ -80,13 +80,16 @@
         {{ range .Site.RegularPages }}
           {{ $pSlug := .File.BaseFileName }}
           {{ if and (eq .Section "projects") (not (in $featuredSlugs $pSlug)) }}
-          <li class="post-item">
+          <li class="post-item--media">
+            <a href="{{ .RelPermalink }}" aria-label="Open {{ .Title }}">
+              <img class="post-thumb" src="{{ with .Params.image }}{{ . }}{{ else }}/images/placeholders/project-apps.svg{{ end }}" alt="" aria-hidden="true">
+            </a>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            <time class="meta" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
           </li>
           {{ end }}
         {{ end }}
-      </div>
+      </ul>
     </div>
   </div>
 </section>

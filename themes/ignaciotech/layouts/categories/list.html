@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="content-section">
+  <div class="container">
+    <h1 class="section-title">{{ .Title }}</h1>
+    {{ $cats := .Site.Taxonomies.categories }}
+    <ul class="post-list">
+      {{ range $name, $pages := $cats }}
+      <li class="post-item" style="display:block; border-bottom:none; padding:0; margin-bottom:1rem;">
+        <strong>{{ $name | title }}</strong> ({{ len $pages }})
+        <ul class="post-list">
+          {{ range first 10 $pages.Pages }}
+          <li class="post-item">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+

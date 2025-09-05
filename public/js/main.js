@@ -3,15 +3,18 @@
   document.addEventListener("DOMContentLoaded", () => {
     const burger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobile-menu");
-    if (burger && mobileMenu) {
+    const mobileOverlay = document.getElementById("mobile-overlay");
+    if (burger && mobileMenu && mobileOverlay) {
       const closeMenu = () => {
         mobileMenu.classList.remove("open");
         mobileMenu.setAttribute("hidden", "");
+        mobileOverlay.setAttribute("hidden", "");
         burger.setAttribute("aria-expanded", "false");
       };
       const openMenu = () => {
         mobileMenu.classList.add("open");
         mobileMenu.removeAttribute("hidden");
+        mobileOverlay.removeAttribute("hidden");
         burger.setAttribute("aria-expanded", "true");
       };
       burger.addEventListener("click", () => {
@@ -24,13 +27,7 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeMenu();
       });
-      document.addEventListener("click", (e) => {
-        if (!mobileMenu.classList.contains("open")) return;
-        const t = e.target;
-        if (!t.closest("#mobile-menu") && !t.closest("#hamburger")) {
-          closeMenu();
-        }
-      }, { capture: true });
+      mobileOverlay.addEventListener("click", closeMenu);
     }
     const interactiveSkip = (el) => !!el.closest("a, button, .project-links, .copy-code-btn");
     document.querySelectorAll(".card[data-href]").forEach((card) => {
