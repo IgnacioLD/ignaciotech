@@ -8,7 +8,7 @@ image: "/images/placeholders/blog-edit.svg"
 featured: true
 readtime: "8 min read"
 level: "Technical"
-type: "Project"
+type: "blog"
 ---
 
 Building Augen has been one of the most rewarding and challenging projects of my career. Creating an AI-powered vision assistant that truly serves the accessibility community required not just technical expertise, but a deep understanding of user needs and inclusive design principles.

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Make whole cards clickable via data-href, without breaking inner links
   const interactiveSkip = (el) => !!el.closest('a, button, .project-links, .copy-code-btn');
-  document.querySelectorAll('.card[data-href]').forEach((card) => {
+  document.querySelectorAll('.card[data-href], .blog-card[data-href], .featured-project-card[data-href]').forEach((card) => {
     const href = card.getAttribute('data-href');
     // removed pointer-follow glow
     card.addEventListener('click', (e) => {

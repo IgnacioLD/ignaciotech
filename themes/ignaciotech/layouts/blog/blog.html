@@ -29,7 +29,7 @@
       <h2 class="projects-section-title">Featured Blog</h2>
       <div class="blog-grid">
         {{ range $featured }}
-        <article class="blog-card">
+        <article class="blog-card" data-href="{{ .RelPermalink }}" role="link" tabindex="0" aria-label="Open {{ .Title }}">
           <!-- Type Badge -->
           {{ if .Params.type }}
           <span class="blog-type-badge">{{ .Params.type }}</span>

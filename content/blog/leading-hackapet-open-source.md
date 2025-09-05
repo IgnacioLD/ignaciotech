@@ -8,7 +8,7 @@ image: "/images/placeholders/blog-edit.svg"
 featured: true
 readtime: "6 min read"
 level: "Management"
-type: "Story"
+type: "blog"
 ---
 
 Leading the Hackapet project has been an incredible journey in open source collaboration and team management. Managing 6 contributors across different time zones, skill levels, and backgrounds has taught me valuable lessons about remote leadership and community building.
