@@ -2241,6 +2241,20 @@ a.cta-outline:visited { color: var(--primary-color); }
   color: var(--text-color);
 }
 
+/* Constrain inline images inside blog content */
+.blog-content picture,
+.blog-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.blog-content picture img,
+.blog-content > img {
+  margin: 1.25rem auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
 .blog-content > p:first-of-type {
   font-size: 1.25rem;
   font-weight: 500;
