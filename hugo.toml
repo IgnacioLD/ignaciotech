@@ -2,6 +2,24 @@ baseURL = 'https://ignacio.tech'
 defaultContentLanguage = 'en'
 theme = 'ignaciotech'
 
+[params]
+  author = "Ignacio Loyola"
+  description = "Android Developer & AI Engineer"
+  location = "Valencia, Spain"
+  
+  # Theme customization
+  darkModeEnabled = true
+  showFeaturedImage = true
+  
+  # Blog settings
+  postsPerPage = 10
+  showReadingTime = true
+  showCategories = true
+  
+  # Projects settings
+  projectsEnabled = true
+  maxFeaturedProjects = 3
+
 [params.social]
   linkedin = "https://linkedin.com/in/shirabit"
   mastodon = "https://mastodon.social/@shirabit"

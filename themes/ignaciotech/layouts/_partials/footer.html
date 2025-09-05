@@ -1,9 +1,9 @@
 <div class="container">
   <div class="footer-explore">
-    <strong>Explore:</strong>
-    <a href="/projects/">Projects</a>
-    · <a href="/blog/">Blog</a>
-    · <a href="/archives/">Archives</a>
+    <strong>{{ site.Data.ui.footer.explore | default "Explore" }}:</strong>
+    <a href="/projects/">{{ site.Data.ui.navigation.projects | default "Projects" }}</a>
+    · <a href="/blog/">{{ site.Data.ui.navigation.blog | default "Blog" }}</a>
+    · <a href="/archives/">{{ site.Data.ui.navigation.archives | default "Archives" }}</a>
   </div>
   <div class="social-links">
     {{ with site.Params.social.linkedin }}

@@ -1,0 +1,37 @@
+# Theme configuration file
+
+name = "IgnacioTech"
+description = "A modern, accessible Hugo theme for developers and AI engineers"
+homepage = "https://ignacio.tech"
+tags = ["developer", "portfolio", "blog", "ai", "android", "responsive", "dark-mode"]
+features = ["responsive", "dark-mode", "accessibility", "seo", "blog", "projects", "social-links"]
+min_version = "0.116.0"
+
+[author]
+  name = "Ignacio Loyola"
+  homepage = "https://ignacio.tech"
+
+[params]
+  # Theme colors (CSS custom properties will override these)
+  primary_color = "#0066cc"
+  secondary_color = "#334155"
+  accent_color = "#0ea5e9"
+  
+  # Typography
+  body_font = "Source Serif 4"
+  heading_font = "Inter"
+  
+  # Layout options
+  show_reading_time = true
+  show_categories = true
+  show_tags = true
+  show_toc = true
+  
+  # Social sharing
+  show_share_buttons = true
+  
+  # Comments (if needed in future)
+  comments_enabled = false
+  
+  # Analytics (if needed)
+  analytics_enabled = false

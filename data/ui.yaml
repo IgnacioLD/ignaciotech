@@ -1,0 +1,38 @@
+common:
+  read_more: "Read more"
+  view_all: "View all"
+  back_to_top: "Back to top"
+  share: "Share"
+  tags: "Tags"
+  categories: "Categories"
+  published: "Published"
+  updated: "Updated"
+  reading_time: "min read"
+  
+navigation:
+  home: "Home"
+  blog: "Blog"
+  projects: "Projects"
+  about: "About"
+  contact: "Contact"
+  archives: "Archives"
+  
+blog:
+  latest_posts: "Latest Posts"
+  featured_posts: "Featured Posts"
+  all_posts: "All Posts"
+  read_more: "Continue reading"
+  no_posts: "No posts found"
+  
+projects:
+  all_projects: "All Projects"
+  featured_projects: "Featured Projects"
+  view_project: "View Project"
+  tech_stack: "Tech Stack"
+  key_features: "Key Features"
+  project_links: "Links"
+  
+footer:
+  copyright: "© 2024"
+  built_with: "Built with Hugo"
+  explore: "Explore"

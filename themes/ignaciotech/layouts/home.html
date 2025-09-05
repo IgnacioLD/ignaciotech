@@ -3,22 +3,23 @@
 {{ if eq site.Language.Lang "es" }}
   {{ $projects = site.Data.es.projects }}
 {{ end }}
+{{ $blogPages := where .Site.RegularPages "Section" "blog" }}
 
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-copy">
-      <h1>Ignacio Loyola</h1>
-      <p class="lead">Android / AI developer based in Valencia, Spain. I build mobile apps and explore practical AI solutions.</p>
-      <p class="lead">I like to share what I learn and build things that might be helpful to others.</p>
+      <h1>{{ .Params.hero.title | default "Ignacio Loyola" }}</h1>
+      <p class="lead">{{ .Params.hero.lead1 | default "Android / AI developer based in Valencia, Spain. I build mobile apps and explore practical AI solutions." }}</p>
+      <p class="lead">{{ .Params.hero.lead2 | default "I like to share what I learn and build things that might be helpful to others." }}</p>
       <div class="explore">
-        <strong>Explore</strong> ·
+        <strong>{{ .Params.hero.explore_text | default "Explore" }}</strong> ·
         <a href="/projects/">Projects</a>
         · <a href="/blog/">Blog</a>
         · <a href="/archives/">Archives</a>
       </div>
       <div class="connect">
-        <strong>Connect</strong>
+        <strong>{{ .Params.hero.connect_text | default "Connect" }}</strong>
         <div class="icon-row">
           {{ with site.Params.social.linkedin }}
           <a class="icon-link" href="{{ . }}" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -50,14 +51,14 @@
 </section>
 
 <!-- Featured Writing (cards) -->
+{{ if .Params.sections.featured_writing.enabled | default true }}
 <section class="content-section featured-blog">
   <div class="container">
-    <h2 class="section-title">Featured Writing</h2>
-    {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+    <h2 class="section-title">{{ .Params.sections.featured_writing.title | default "Featured Writing" }}</h2>
     {{ $featured := where $blogPages "Params.featured" true }}
     {{ if gt (len $featured) 0 }}
       <div class="blog-grid">
-        {{ range first 3 $featured }}
+        {{ range first (.Params.sections.featured_writing.count | default 3) $featured }}
         <article class="blog-card">
           <!-- Type Badge -->
           {{ if .Params.type }}
@@ -104,15 +105,17 @@
     {{ end }}
   </div>
 </section>
+{{ end }}
 
 <!-- Recent Writing (list) -->
+{{ if .Params.sections.recent_writing.enabled | default true }}
 <section class="content-section">
   <div class="container">
     <div class="projects-section">
-      <h2 class="projects-section-title">Recent Writing</h2>
+      <h2 class="projects-section-title">{{ .Params.sections.recent_writing.title | default "Recent Writing" }}</h2>
       <ul class="post-list">
         {{ $recent := where $blogPages "Params.featured" "ne" true }}
-        {{ range first 5 $recent }}
+        {{ range first (.Params.sections.recent_writing.count | default 5) $recent }}
         <li class="post-item">
           <div class="post-item-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -126,13 +129,14 @@
     </div>
   </div>
 </section>
-
+{{ end }}
 
 <!-- Projects Section -->
+{{ if .Params.sections.projects.enabled | default true }}
 <section id="projects" class="content-section featured-projects">
   <div class="container">
-    <h2 class="section-title">{{ i18n "projects.title" }}</h2>
-    <p class="section-subtitle">{{ i18n "projects.subtitle" }}</p>
+    <h2 class="section-title">{{ .Params.sections.projects.title | default (i18n "projects.title") | default "Projects" }}</h2>
+    <p class="section-subtitle">{{ .Params.sections.projects.subtitle | default (i18n "projects.subtitle") | default "A selection of projects I've worked on" }}</p>
     
     <div class="card-grid">
       {{ range $projects.projects }}
@@ -168,7 +172,7 @@
         <!-- Tech Stack -->
         {{ if .stack }}
         <div class="project-stack">
-          <div class="project-stack-title">Tech Stack</div>
+          <div class="project-stack-title">{{ site.Data.ui.projects.tech_stack | default "Tech Stack" }}</div>
           <div class="stack-list">
             {{ range .stack }}
             <span class="stack-item">{{ . }}</span>
@@ -180,7 +184,7 @@
         <!-- Key Features -->
         {{ if .features }}
         <div class="project-features">
-          <div class="project-features-title">Key Features</div>
+          <div class="project-features-title">{{ site.Data.ui.projects.key_features | default "Key Features" }}</div>
           <div class="features-list">
             {{ range .features }}
             <div class="feature-item">{{ . }}</div>
@@ -205,6 +209,6 @@
     </div>
   </div>
 </section>
-
+{{ end }}
 
 {{ end }}
