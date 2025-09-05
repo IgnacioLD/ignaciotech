@@ -24,10 +24,6 @@
   {{- if and $page $src -}}
     {{- with $page.Resources -}}
       {{- $res = .GetMatch $src -}}
-      {{- if not $res -}}
-        {{- $base := path.Base $src -}}
-        {{- $res = .GetMatch (printf "**%s" $base) -}}
-      {{- end -}}
     {{- end -}}
   {{- end -}}
   {{- if not $res -}}
