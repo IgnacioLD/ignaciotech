@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('open')) return;
+      const t = e.target;
+      if (!t.closest('#mobile-menu') && !t.closest('#hamburger')) {
+        closeMenu();
+      }
+    }, { capture: true });
   }
   // Make whole cards clickable via data-href, without breaking inner links
   const interactiveSkip = (el) => !!el.closest('a, button, .project-links, .copy-code-btn');

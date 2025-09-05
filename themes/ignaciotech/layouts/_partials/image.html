@@ -14,11 +14,12 @@
 {{- $class := .class | default "" -}}
 {{- $width := .width | default 1200 -}}
 {{- $loading := .loading | default "lazy" -}}
+{{- $fetch := .fetchpriority | default "" -}}
 
 {{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
-  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" decoding="async">
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" decoding="async" {{ with $fetch }}fetchpriority="{{ . }}"{{ end }}>
 {{- else if (hasSuffix $src ".svg") -}}
-  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" decoding="async">
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" decoding="async" {{ with $fetch }}fetchpriority="{{ . }}"{{ end }}>
 {{- else -}}
   {{- $trim := strings.TrimPrefix "/" $src -}}
   {{- $res := resources.Get $trim -}}
@@ -29,7 +30,7 @@
     {{- $w1200 := $res.Resize (printf "%dx webp" $width) -}}
     <picture>
       <source type="image/webp" srcset="{{ $w480.RelPermalink }} 480w, {{ $w800.RelPermalink }} 800w, {{ $w1200.RelPermalink }} {{ $w1200.Width }}w" sizes="(max-width: 768px) 100vw, 50vw">
-      <img src="{{ $w800.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $w800.Width }}" height="{{ $w800.Height }}" loading="{{ $loading }}" decoding="async">
+      <img src="{{ $w800.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $w800.Width }}" height="{{ $w800.Height }}" loading="{{ $loading }}" decoding="async" {{ with $fetch }}fetchpriority="{{ . }}"{{ end }}>
     </picture>
   {{- else -}}
     <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">

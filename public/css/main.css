@@ -300,11 +300,12 @@ h3 {
 /* Hero section */
 .hero {
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   text-align: center;
-  /* Use pure gradients for lightweight LCP */
   background: radial-gradient(1200px 800px at 50% 20%, rgba(37, 99, 235, 0.15), transparent 60%),
               linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.92) 100%);
   color: white;
@@ -340,6 +341,19 @@ h3 {
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.hero-portrait { position: relative; z-index: 1; }
+.hero-img { width: min(92vw, 720px); height: auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.1fr 0.9fr; text-align: left; }
+  .hero-content { justify-self: end; }
+  .hero-portrait { justify-self: start; }
+}
+
+@media (max-width: 899px) {
+  .hero-portrait { display: none; }
 }
 
 .hero h1 {
