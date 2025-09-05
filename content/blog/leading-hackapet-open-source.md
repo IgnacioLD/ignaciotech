@@ -2,11 +2,16 @@
 title: "Leading Hackapet: Lessons from Open Source Team Management"
 date: 2024-02-15
 tags: ["Open Source", "Team Leadership", "Project Management", "Android Development"]
-description: "Insights from leading a 16+ member open source team building animal shelter management software"
+categories: ["Open Source", "Team Leadership"]
+description: "Insights from leading a 6 member open source team building animal shelter management software"
 image: "/images/placeholders/blog-edit.svg"
+featured: true
+readtime: "6 min read"
+level: "Management"
+type: "Story"
 ---
 
-Leading the Hackapet project has been an incredible journey in open source collaboration and team management. Managing 16+ contributors across different time zones, skill levels, and backgrounds has taught me valuable lessons about remote leadership and community building.
+Leading the Hackapet project has been an incredible journey in open source collaboration and team management. Managing 6 contributors across different time zones, skill levels, and backgrounds has taught me valuable lessons about remote leadership and community building.
 
 ## Building the Team
 

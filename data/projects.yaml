@@ -3,6 +3,20 @@ projects:
     slug: "augen"
     description: "AI-Powered Vision Assistant for Accessibility with voice interaction and multilingual support."
     image: "/images/placeholders/project-apps.svg"
+    status: "Live"
+    year: "2024"
+    team_size: "Solo Project"
+    stack:
+      - "Python"
+      - "FastAPI"
+      - "Computer Vision"
+      - "OpenAI API"
+      - "Web Technologies"
+    features:
+      - "12 Languages Support"
+      - "Voice Interaction"
+      - "Real-time Processing"
+      - "Accessibility First"
     skills:
       - "AI Vision"
       - "Accessibility"
@@ -13,8 +27,22 @@ projects:
         
   - name: "Hackapet"
     slug: "hackapet"
-    description: "Open-source project for animal shelters leading a team of 16+ members."
+    description: "Open-source project for animal shelters leading a team of 6 members."
     image: "/images/placeholders/project-apps.svg"
+    status: "Active Development"
+    year: "2023-Present"
+    team_size: "6 Contributors"
+    stack:
+      - "Android Kotlin"
+      - "Firebase"
+      - "Jetpack Compose"
+      - "Room Database"
+      - "GitHub Actions"
+    features:
+      - "Animal Management"
+      - "Volunteer Coordination"
+      - "Adoption Tracking"
+      - "Multi-shelter Support"
     skills:
       - "Open Source"
       - "Team Leadership"
@@ -27,6 +55,20 @@ projects:
     slug: "countin"
     description: "Real-time event occupancy tracker for Android with modern architecture."
     image: "/images/placeholders/project-apps.svg"
+    status: "Completed"
+    year: "2024"
+    team_size: "Solo Project"
+    stack:
+      - "Android Kotlin"
+      - "Jetpack Compose"
+      - "Firebase Realtime"
+      - "Clean Architecture"
+      - "Hilt DI"
+    features:
+      - "Real-time Sync"
+      - "Offline Support"
+      - "Modern UI/UX"
+      - "Multi-user Access"
     skills:
       - "Android"
       - "Kotlin"

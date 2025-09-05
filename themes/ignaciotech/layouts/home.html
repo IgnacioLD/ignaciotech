@@ -9,14 +9,13 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>Ignacio Loyola</h1>
-      <p class="lead">Android / AI engineer based in Valencia, Spain. I write and build things around mobile, accessibility, and practical AI.</p>
-      <p class="lead">My goal is to explore and share ideas and projects that make technology more useful, humane, and accessible.</p>
+      <p class="lead">Android / AI developer based in Valencia, Spain. I build mobile apps and explore practical AI solutions.</p>
+      <p class="lead">I like to share what I learn and build things that might be helpful to others.</p>
       <div class="explore">
         <strong>Explore</strong> ·
         <a href="/projects/">Projects</a>
         · <a href="/blog/">Blog</a>
         · <a href="/archives/">Archives</a>
-        · <a href="/categories/">Categories</a>
       </div>
       <div class="connect">
         <strong>Connect</strong>
@@ -50,33 +49,77 @@
   </div>
 </section>
 
-<!-- Writing (featured and recent) -->
-<section class="content-section">
+<!-- Featured Writing (cards) -->
+<section class="content-section featured-blog">
   <div class="container">
-    <h2 class="section-title">Writing</h2>
+    <h2 class="section-title">Featured Writing</h2>
     {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
     {{ $featured := where $blogPages "Params.featured" true }}
     {{ if gt (len $featured) 0 }}
-    <div class="projects-section">
-      <h3 class="projects-section-title">Featured</h3>
-      <ul class="post-list">
+      <div class="blog-grid">
         {{ range first 3 $featured }}
-        <li class="post-item">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-        </li>
+        <article class="blog-card">
+          <!-- Type Badge -->
+          {{ if .Params.type }}
+          <span class="blog-type-badge">{{ .Params.type }}</span>
+          {{ end }}
+          
+          <div class="blog-preview">
+            {{ if .Params.image }}
+              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-preview-image">
+            {{ else }}
+              <div class="blog-preview-gradient">
+                <span class="blog-preview-icon">📝</span>
+              </div>
+            {{ end }}
+          </div>
+          
+          <div class="blog-content-preview">
+            <!-- Enhanced Meta -->
+            <div class="enhanced-blog-meta">
+              <div class="blog-meta-left">
+                <div class="blog-tags">
+                  {{ range first 2 .Params.categories }}
+                    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a>
+                  {{ end }}
+                </div>
+                {{ if .Params.level }}
+                <span class="blog-level {{ .Params.level | lower }}">{{ .Params.level }}</span>
+                {{ end }}
+              </div>
+              <div class="blog-meta-right">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                <div class="blog-readtime">{{ .ReadingTime }} min read</div>
+              </div>
+            </div>
+            
+            <h3 class="blog-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            <p class="blog-excerpt">{{ .Description | default (.Summary | truncate 140) }}</p>
+          </div>
+        </article>
         {{ end }}
-      </ul>
-    </div>
+      </div>
     {{ end }}
+  </div>
+</section>
+
+<!-- Recent Writing (list) -->
+<section class="content-section">
+  <div class="container">
     <div class="projects-section">
-      <h3 class="projects-section-title">Recent</h3>
+      <h2 class="projects-section-title">Recent Writing</h2>
       <ul class="post-list">
-        {{ $nonfeat := where $blogPages "Params.featured" "ne" true }}
-        {{ range first 5 $nonfeat }}
+        {{ $recent := where $blogPages "Params.featured" "ne" true }}
+        {{ range first 5 $recent }}
         <li class="post-item">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <div class="post-item-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+          <div class="post-item-date">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
         </li>
         {{ end }}
       </ul>
@@ -86,7 +129,7 @@
 
 
 <!-- Projects Section -->
-<section id="projects" class="content-section">
+<section id="projects" class="content-section featured-projects">
   <div class="container">
     <h2 class="section-title">{{ i18n "projects.title" }}</h2>
     <p class="section-subtitle">{{ i18n "projects.subtitle" }}</p>
@@ -96,35 +139,57 @@
       {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
       {{ $p2 := site.GetPage (print "projects/" .slug) }}
       {{ $page := or $p1 $p2 }}
-      <div class="card" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
-        {{ if $page }}
-        <a href="{{ $page.RelPermalink }}" class="card-preview-link" aria-label="Open {{ .name }}">
-          <div class="project-image-placeholder">
-            {{ if .image }}
-              {{ partial "image.html" (dict "page" $page "src" .image "alt" .name "class" "project-preview-image" "width" 1200) }}
+      <article class="featured-project-card" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
+        <!-- Status Badge -->
+        {{ $statusClass := "" }}
+        {{ if eq .status "Live" }}{{ $statusClass = "live" }}{{ end }}
+        {{ if eq .status "Active Development" }}{{ $statusClass = "active" }}{{ end }}
+        {{ if eq .status "Completed" }}{{ $statusClass = "completed" }}{{ end }}
+        <span class="project-status {{ $statusClass }}">{{ .status }}</span>
+        
+        <!-- Project Header -->
+        <div class="project-header">
+          <h3>
+            {{ if $page }}
+              <a href="{{ $page.RelPermalink }}">{{ .name }}</a>
             {{ else }}
-              <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
+              {{ .name }}
             {{ end }}
-          </div>
-        </a>
-        <h3><a href="{{ $page.RelPermalink }}">{{ .name }}</a></h3>
-        {{ else }}
-        <div class="project-image-placeholder">
-          {{ if .image }}
-            {{ partial "image.html" (dict "page" . "src" .image "alt" .name "class" "project-preview-image" "width" 1200) }}
-          {{ else }}
-            <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
-          {{ end }}
-        </div>
-        <h3>{{ .name }}</h3>
-        {{ end }}
-        <p>{{ .description }}</p>
-        <div class="skills-list">
-          {{ range .skills }}
-          <span class="skill-tag">{{ . }}</span>
-          {{ end }}
+          </h3>
+          <span class="project-year">{{ .year }}</span>
         </div>
         
+        <!-- Team Size -->
+        <div class="project-team">{{ .team_size }}</div>
+        
+        <!-- Description -->
+        <p>{{ .description }}</p>
+        
+        <!-- Tech Stack -->
+        {{ if .stack }}
+        <div class="project-stack">
+          <div class="project-stack-title">Tech Stack</div>
+          <div class="stack-list">
+            {{ range .stack }}
+            <span class="stack-item">{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        
+        <!-- Key Features -->
+        {{ if .features }}
+        <div class="project-features">
+          <div class="project-features-title">Key Features</div>
+          <div class="features-list">
+            {{ range .features }}
+            <div class="feature-item">{{ . }}</div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        
+        <!-- Links -->
         {{ if .links }}
         <div class="project-links">
           {{ range .links }}
@@ -135,7 +200,7 @@
           {{ end }}
         </div>
         {{ end }}
-      </div>
+      </article>
       {{ end }}
     </div>
   </div>

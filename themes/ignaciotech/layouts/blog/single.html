@@ -5,10 +5,10 @@
       <h1 class="blog-post-title">{{ .Title }}</h1>
       <div class="blog-post-meta">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-        {{ with .Params.tags }}
+        {{ with .Params.categories }}
         <div class="blog-tags">
           {{ range . }}
-          <span class="blog-tag">{{ . }}</span>
+          <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a>
           {{ end }}
         </div>
         {{ end }}
@@ -24,6 +24,17 @@
     <div class="blog-content">
       {{ .Content }}
     </div>
+    
+    {{ if .Params.tags }}
+    <div class="blog-tags-section">
+      <h3>Tags</h3>
+      <div class="blog-tags">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
     
     <footer class="blog-footer">
       <div class="share-buttons">
@@ -50,6 +61,7 @@
       
       <div class="blog-back">
         <a href="/blog/" class="cta-button">Back to Blog</a>
+        <a href="/archives/" class="cta-button secondary">View Archives</a>
       </div>
     </footer>
   </div>

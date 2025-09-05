@@ -1,32 +1,97 @@
 {{ define "main" }}
-<section class="content-section">
+<!-- Categories -->
+<section class="content-section categories-section">
   <div class="container">
     <h1 class="section-title">{{ .Title }}</h1>
     <p class="section-subtitle">{{ .Description }}</p>
+    
+    <div class="projects-section">
+      <h2 class="categories-section-title">Categories</h2>
+      <div class="categories-list">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/" class="category-item">
+          <span class="category-name">{{ $name }}</span>
+          <span class="category-count">{{ len $taxonomy }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Blog (cards) -->
+<section class="content-section featured-blog">
+  <div class="container">
     {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
     {{ $featured := where $blogPages "Params.featured" true }}
     {{ if gt (len $featured) 0 }}
     <div class="projects-section">
-      <h2 class="projects-section-title">Featured</h2>
-      <ul class="post-list">
-        {{ range first 3 $featured }}
-        <li class="post-item">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-        </li>
+      <h2 class="projects-section-title">Featured Blog</h2>
+      <div class="blog-grid">
+        {{ range $featured }}
+        <article class="blog-card">
+          <!-- Type Badge -->
+          {{ if .Params.type }}
+          <span class="blog-type-badge">{{ .Params.type }}</span>
+          {{ end }}
+          
+          <div class="blog-preview">
+            {{ if .Params.image }}
+              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-preview-image">
+            {{ else }}
+              <div class="blog-preview-gradient">
+                <span class="blog-preview-icon">📝</span>
+              </div>
+            {{ end }}
+          </div>
+          
+          <div class="blog-content-preview">
+            <!-- Enhanced Meta -->
+            <div class="enhanced-blog-meta">
+              <div class="blog-meta-left">
+                <div class="blog-tags">
+                  {{ range first 2 .Params.categories }}
+                    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a>
+                  {{ end }}
+                </div>
+                {{ if .Params.level }}
+                <span class="blog-level {{ .Params.level | lower }}">{{ .Params.level }}</span>
+                {{ end }}
+              </div>
+              <div class="blog-meta-right">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                <div class="blog-readtime">{{ .ReadingTime }} min read</div>
+              </div>
+            </div>
+            
+            <h3 class="blog-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            <p class="blog-excerpt">{{ .Description | default (.Summary | truncate 140) }}</p>
+          </div>
+        </article>
         {{ end }}
-      </ul>
+      </div>
     </div>
     {{ end }}
+  </div>
+</section>
 
+
+<!-- All Blog Posts (list) -->
+<section class="content-section">
+  <div class="container">
     <div class="projects-section">
-      <h2 class="projects-section-title">All Posts</h2>
+      <h2 class="projects-section-title">All Blog Posts</h2>
       <ul class="post-list">
-        {{ $nonfeat := where $blogPages "Params.featured" "ne" true }}
-        {{ range $nonfeat }}
+        {{ range $blogPages }}
         <li class="post-item">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <div class="post-item-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+          <div class="post-item-date">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </div>
         </li>
         {{ end }}
       </ul>

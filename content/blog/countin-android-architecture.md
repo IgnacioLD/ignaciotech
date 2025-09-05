@@ -2,6 +2,7 @@
 title: "CountIn: Modern Android Architecture in Practice"
 date: 2024-01-20
 tags: ["Android", "Kotlin", "Architecture", "Real-Time", "Firebase"]
+categories: ["Android Development", "Architecture"]
 description: "Deep dive into the architecture decisions and implementation details of CountIn, a real-time occupancy tracking app"
 image: "/images/placeholders/blog-edit.svg"
 ---
