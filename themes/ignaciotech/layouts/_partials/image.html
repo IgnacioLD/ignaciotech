@@ -22,10 +22,12 @@
 {{- else -}}
   {{- $res := nil -}}
   {{- if and $page $src -}}
-    {{- $res = $page.Resources.GetMatch $src -}}
-    {{- if not $res -}}
-      {{- $base := path.Base $src -}}
-      {{- $res = $page.Resources.GetMatch (printf "**%s" $base) -}}
+    {{- with $page.Resources -}}
+      {{- $res = .GetMatch $src -}}
+      {{- if not $res -}}
+        {{- $base := path.Base $src -}}
+        {{- $res = .GetMatch (printf "**%s" $base) -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
   {{- if not $res -}}
