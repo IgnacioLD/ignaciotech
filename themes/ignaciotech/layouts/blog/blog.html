@@ -10,8 +10,8 @@
         <div class="card" data-href="{{ .RelPermalink }}" role="link" tabindex="0">
           <a href="{{ .RelPermalink }}" class="card-preview-link" aria-label="Open {{ .Title }}">
             <div class="project-image-placeholder">
-              {{ if .Params.image }}
-                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="project-preview-image">
+            {{ if .Params.image }}
+              {{ partial "image.html" (dict "page" . "src" .Params.image "alt" .Title "class" "project-preview-image" "width" 1200) }}
               {{ else }}
                 <img src="/images/placeholders/blog-edit.svg" alt="{{ .Title }}" class="project-preview-image">
               {{ end }}

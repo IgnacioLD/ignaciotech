@@ -21,7 +21,7 @@
           <a href="{{ $page.RelPermalink }}" class="card-preview-link" aria-label="Open {{ .name }}">
             <div class="project-image-placeholder">
               {{ if .image }}
-                <img src="{{ .image }}" alt="{{ .name }}" class="project-preview-image">
+                {{ partial "image.html" (dict "page" $page "src" .image "alt" .name "class" "project-preview-image" "width" 1200) }}
               {{ else }}
                 <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
               {{ end }}
@@ -41,7 +41,7 @@
           {{ else }}
           <div class="project-image-placeholder">
             {{ if .image }}
-              <img src="{{ .image }}" alt="{{ .name }}" class="project-preview-image">
+              {{ partial "image.html" (dict "page" $page "src" .image "alt" .name "class" "project-preview-image" "width" 1200) }}
             {{ else }}
               <img src="/images/placeholders/project-apps.svg" alt="{{ .name }}" class="project-preview-image">
             {{ end }}
@@ -83,7 +83,7 @@
             <a href="{{ .RelPermalink }}" class="card-preview-link" aria-label="Open {{ .Title }}">
               <div class="project-image-placeholder">
                 {{ if .Params.image }}
-                  <img src="{{ .Params.image }}" alt="{{ .Title }}" class="project-preview-image">
+                  {{ partial "image.html" (dict "page" . "src" .Params.image "alt" .Title "class" "project-preview-image" "width" 1200) }}
                 {{ else }}
                   <img src="/images/placeholders/project-apps.svg" alt="{{ .Title }}" class="project-preview-image">
                 {{ end }}

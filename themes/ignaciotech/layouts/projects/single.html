@@ -18,7 +18,7 @@
     
     {{ if and .Params.image (ne .Params.image "/images/placeholders/project-apps.svg") }}
     <div class="blog-hero">
-      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-hero-image">
+      {{ partial "image.html" (dict "page" . "src" .Params.image "alt" .Title "class" "blog-hero-image" "width" 1600) }}
     </div>
     {{ end }}
     

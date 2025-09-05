@@ -1,0 +1,47 @@
+{{/*
+  Generic image partial with WebP conversion at build time.
+  Usage: {{ partial "image.html" (dict "page" . "src" "/path/to.jpg" "alt" .Title "class" "project-preview-image" "width" 1200) }}
+
+  Behavior:
+  - If the image is a Page Resource (bundled with the content), it will be processed.
+  - Else if it exists under the Hugo assets/ folder, it will be processed.
+  - Else it falls back to the original src.
+  - SVGs and absolute HTTP URLs are not processed.
+*/}}
+{{- $page := or .page .Page -}}
+{{- $src := .src | default "" -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $width := .width | default 1200 -}}
+
+{{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+{{- else if (hasSuffix $src ".svg") -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+{{- else -}}
+  {{- $res := nil -}}
+  {{- if and $page $src -}}
+    {{- $res = $page.Resources.GetMatch $src -}}
+    {{- if not $res -}}
+      {{- $base := path.Base $src -}}
+      {{- $res = $page.Resources.GetMatch (printf "**%s" $base) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $res -}}
+    {{- $trim := strings.TrimPrefix "/" $src -}}
+    {{- $res = resources.Get $trim -}}
+  {{- end -}}
+
+  {{- if $res -}}
+    {{- $w480 := $res.Resize (printf "480x webp") -}}
+    {{- $w800 := $res.Resize (printf "800x webp") -}}
+    {{- $w1200 := $res.Resize (printf "%dx webp" $width) -}}
+    <picture>
+      <source type="image/webp" srcset="{{ $w480.RelPermalink }} 480w, {{ $w800.RelPermalink }} 800w, {{ $w1200.RelPermalink }} {{ $w1200.Width }}w" sizes="(max-width: 768px) 100vw, 50vw">
+      <img src="{{ $w800.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" width="{{ $w800.Width }}" height="{{ $w800.Height }}" loading="lazy" decoding="async">
+    </picture>
+  {{- else -}}
+    <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+  {{- end -}}
+{{- end -}}
+

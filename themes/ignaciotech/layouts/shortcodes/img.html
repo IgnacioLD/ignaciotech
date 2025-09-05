@@ -1,0 +1,6 @@
+{{/* Shortcode: img
+Usage: {{< img src="path/to.jpg" alt="Alt text" class="my-img" width="1200" >}}
+*/}}
+{{- $dict := dict "page" .Page "src" (.Get "src") "alt" (.Get "alt") "class" (.Get "class") "width" (.Get "width") -}}
+{{- partial "image.html" $dict -}}
+
