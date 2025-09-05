@@ -894,6 +894,56 @@ h3 {
 .dark-mode .cta-outline { color: #e6edf5; border-color: #3b4a66; }
 .dark-mode .cta-outline:hover { background: rgba(148,163,184,0.12); }
 
+/* Dark mode styles for new elements */
+.dark-mode .category-item { 
+  background: #1e293b; 
+  border-color: #334155; 
+  color: #e6edf5; 
+}
+.dark-mode .category-item:hover { 
+  border-color: #60a5fa; 
+  background: #334155; 
+}
+.dark-mode .category-count { 
+  background: #3b82f6; 
+  color: white; 
+}
+.dark-mode .blog-level.technical { 
+  background: rgba(59, 130, 246, 0.15); 
+  color: #60a5fa; 
+  border-color: rgba(59, 130, 246, 0.3); 
+}
+.dark-mode .blog-level.management { 
+  background: rgba(16, 185, 129, 0.15); 
+  color: #34d399; 
+  border-color: rgba(16, 185, 129, 0.3); 
+}
+.dark-mode .blog-tags-section h3 { 
+  color: #e6edf5; 
+}
+.dark-mode .categories-section-title { 
+  color: #e6edf5; 
+}
+.dark-mode .footer-explore { 
+  color: #9fb3c8; 
+}
+.dark-mode .footer-explore strong { 
+  color: #e6edf5; 
+}
+.dark-mode .footer-explore a { 
+  color: #60a5fa; 
+}
+.dark-mode .cta-button.secondary { 
+  background: transparent; 
+  color: #9fb3c8; 
+  border-color: #334155; 
+}
+.dark-mode .cta-button.secondary:hover { 
+  background: #1e293b; 
+  color: #e6edf5; 
+  border-color: #60a5fa; 
+}
+
 /* Media list items */
 .post-list--media { list-style: none; padding: 0; margin: 1rem 0; }
 .post-item--media { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
