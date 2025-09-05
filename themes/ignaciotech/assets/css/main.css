@@ -18,9 +18,9 @@
 .dark-mode {
   --bg-color: #0b1220;
   --surface-color: #0f172a;
-  --text-color: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --border-color: #1f2937;
+  --text-color: #e6edf5;
+  --text-secondary: #9fb3c8;
+  --border-color: #263040;
   --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -301,6 +301,8 @@ h3 {
 
 .hero-inner { max-width: 1100px; width: 100%; display: grid; grid-template-columns: 1fr; gap: 2rem; }
 .hero-copy { max-width: 720px; }
+.hero-side { display: none; align-items: center; justify-content: center; }
+.hero-side-img { width: min(42vw, 420px); height: auto; border-radius: 8px; border: 1px solid var(--border-color); }
 .hero-content {
   position: relative;
   z-index: 1;
@@ -318,10 +320,11 @@ h3 {
 .connect { margin-top: 0.5rem; color: var(--text-secondary); }
 .icon-row { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
 .icon-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--border-color); color: var(--text-color); background: var(--surface-color); }
-.icon-link:hover { border-color: var(--text-color); }
+.icon-link:hover { border-color: var(--text-color); background: rgba(255,255,255,0.04); }
 
 @media (min-width: 900px) {
   .hero-inner { grid-template-columns: 1.2fr 0.8fr; }
+  .hero-side { display: flex; }
 }
 
 .post-list { list-style: none; padding: 0; margin: 2rem auto 0; max-width: 700px; }

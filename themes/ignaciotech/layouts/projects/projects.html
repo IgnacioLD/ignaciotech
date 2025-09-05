@@ -11,7 +11,7 @@
     <!-- Featured Projects -->
     <div class="projects-section">
       <h2 class="projects-section-title">Featured Projects</h2>
-      <div class="card-grid">
+      <div class="post-list">
         {{ range $projects.projects }}
         {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
         {{ $p2 := site.GetPage (print "projects/" .slug) }}
@@ -80,27 +80,10 @@
         {{ range .Site.RegularPages }}
           {{ $pSlug := .File.BaseFileName }}
           {{ if and (eq .Section "projects") (not (in $featuredSlugs $pSlug)) }}
-          <div class="card" data-href="{{ .RelPermalink }}" role="link" tabindex="0">
-            <a href="{{ .RelPermalink }}" class="card-preview-link" aria-label="Open {{ .Title }}">
-              <div class="project-image-placeholder">
-                {{ if .Params.image }}
-                  {{ partial "image.html" (dict "page" . "src" .Params.image "alt" .Title "class" "project-preview-image" "width" 1200) }}
-                {{ else }}
-                  <img src="/images/placeholders/project-apps.svg" alt="{{ .Title }}" class="project-preview-image">
-                {{ end }}
-             </div>
-           </a>
-           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-           <p>{{ .Params.description | default (.Summary | truncate 120) }}</p>
-           {{ with .Params.tech }}
-           <div class="skills-list">
-             {{ range (first 3 .) }}
-             <span class="skill-tag">{{ . }}</span>
-             {{ end }}
-           </div>
-           {{ end }}
-          
-          </div>
+          <li class="post-item">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          </li>
           {{ end }}
         {{ end }}
       </div>

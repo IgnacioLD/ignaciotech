@@ -43,21 +43,43 @@
         </div>
       </div>
     </div>
+    <div class="hero-side">
+      {{ partial "image.html" (dict "page" . "src" "/portrait.jpg" "alt" "Ignacio Loyola" "class" "hero-side-img" "width" 1200 "loading" "lazy" "fetchpriority" "low") }}
+    </div>
   </div>
 </section>
 
-<!-- Writing (latest posts) -->
+<!-- Writing (featured and recent) -->
 <section class="content-section">
   <div class="container">
     <h2 class="section-title">Writing</h2>
-    <ul class="post-list">
-      {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
-      <li class="post-item">
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-      </li>
-      {{ end }}
-    </ul>
+    {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+    {{ $featured := where $blogPages "Params.featured" true }}
+    {{ if gt (len $featured) 0 }}
+    <div class="projects-section">
+      <h3 class="projects-section-title">Featured</h3>
+      <ul class="post-list">
+        {{ range first 3 $featured }}
+        <li class="post-item">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    <div class="projects-section">
+      <h3 class="projects-section-title">Recent</h3>
+      <ul class="post-list">
+        {{ $nonfeat := where $blogPages "Params.featured" "ne" true }}
+        {{ range first 5 $nonfeat }}
+        <li class="post-item">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
   </div>
 </section>
 
