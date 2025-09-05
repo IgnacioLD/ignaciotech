@@ -12,7 +12,7 @@ description: "AI-Powered Vision Assistant for Accessibility with voice interacti
 
 # Augen: AI Vision Assistant for Accessibility
 
-Augen is a cutting-edge AI-powered vision assistant designed to enhance accessibility for visually impaired users. The project combines advanced computer vision technology with natural language processing to provide real-time scene description and navigation assistance.
+Augen is a small, AI‑based vision assistant to support accessibility. It uses computer vision and simple voice features to describe a scene and help with basic navigation. It’s a work in progress and improves slowly with feedback.
 
 ## Key Features
 
@@ -27,14 +27,14 @@ Augen is a cutting-edge AI-powered vision assistant designed to enhance accessib
 The project leverages modern web technologies and AI services:
 
 - **Frontend**: Progressive Web App (PWA) architecture for offline capability
-- **AI Vision**: Integration with state-of-the-art computer vision APIs
+- **AI Vision**: Integration with common computer vision APIs
 - **Speech Processing**: Web Speech API for browser-native voice interaction
 - **Accessibility**: Screen reader compatibility and keyboard navigation
 - **Internationalization**: i18n framework supporting RTL languages
 
-## Impact and Goals
+## Goals
 
-Augen aims to break down barriers in digital accessibility by providing:
+Augen tries to be useful in everyday moments:
 
 1. **Independence**: Enabling users to navigate environments without assistance
 2. **Inclusion**: Creating opportunities for participation in digital activities
@@ -43,6 +43,4 @@ Augen aims to break down barriers in digital accessibility by providing:
 
 ## Current Status
 
-The project is actively maintained and continuously improved based on user feedback. Regular updates include new language support, enhanced AI accuracy, and additional accessibility features.
-
-Visit [augen.ignacio.tech](https://augen.ignacio.tech) to try the live demo and experience the future of accessibility technology.
+Actively maintained in small iterations. Feedback helps guide what to fix next. You can try a live demo at [augen.ignacio.tech](https://augen.ignacio.tech).

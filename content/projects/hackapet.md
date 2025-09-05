@@ -5,14 +5,16 @@ status: "active"
 tech: ["Android", "Open Source", "Team Leadership", "Kotlin", "Room Database"]
 image: "/images/placeholders/project-apps.svg"
 links:
+  - name: "Website"
+    url: "https://hackapet.org"
   - name: "GitHub"
     url: "https://github.com/hackapet-project"
-description: "Open-source project for animal shelters leading a team of 16+ members"
+description: "Open‑source tools for animal shelters, built with a small community"
 ---
 
-# Hackapet: Revolutionizing Animal Shelter Management
+# Hackapet: Open Source Tools for Shelters
 
-Hackapet is an ambitious open-source project dedicated to modernizing animal shelter operations through technology. Leading a diverse team of 16+ contributors, we're building comprehensive solutions that help shelters save more lives and operate more efficiently.
+Hackapet is a community project to help animal shelters with simple, practical tools. A small group of volunteers contributes when they can, and we move at a steady pace.
 
 ## Project Vision
 
@@ -44,9 +46,9 @@ Built with modern Android development practices:
 - **Testing**: Comprehensive unit and integration test coverage
 - **CI/CD**: Automated testing and deployment pipelines
 
-## Open Source Impact
+## Community
 
-The project has grown into a thriving community:
+The project is a small but growing community:
 
 - **16+ Active Contributors** from 8 countries
 - **Multiple Shelter Pilots** in Spain and Portugal
@@ -54,15 +56,13 @@ The project has grown into a thriving community:
 - **Documentation Hub** with onboarding guides
 - **Community Forums** for feature requests and support
 
-## Leadership Experience
+## What I'm Learning
 
-Managing this project has provided valuable experience in:
-
-- **Remote Team Coordination** across different time zones
-- **Technical Decision Making** and architecture planning
-- **Community Building** and contributor onboarding
-- **Stakeholder Management** with shelter administrators
-- **Project Planning** using agile methodologies
+- **Remote collaboration** across different time zones
+- **Architecture trade‑offs** and planning
+- **Onboarding contributors** and documentation
+- **Working with shelters** and their constraints
+- **Lightweight planning** for volunteer teams
 
 ## Current Roadmap
 
