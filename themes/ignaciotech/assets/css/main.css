@@ -54,6 +54,12 @@ body {
   position: relative;
 }
 
+/* Prevent horizontal overflow on small screens */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Subtle techy grid background */
 body::before {
   content: '';
@@ -573,17 +579,22 @@ h3 {
     padding: 1rem 0;
     border-top: 1px solid var(--border-color);
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   .nav-menu a {
     font-size: 0.875rem;
     padding: 0.5rem 0;
+    white-space: nowrap;
   }
   
   .header-controls {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    position: static;
+    top: auto;
+    right: auto;
+    margin-top: 0.25rem;
+    align-self: center;
   }
   
   .dark-mode-toggle {
