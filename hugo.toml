@@ -2,6 +2,12 @@ baseURL = 'https://ignacio.tech'
 defaultContentLanguage = 'en'
 theme = 'ignaciotech'
 
+[params.social]
+  linkedin = "https://linkedin.com/in/shirabit"
+  mastodon = "https://mastodon.social/@shirabit"
+  medium = "https://medium.com/@shirabit"
+  email = "hi@ignacio.tech"
+
 [languages]
   [languages.en]
     languageCode = 'en-us'

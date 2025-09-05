@@ -393,6 +393,25 @@ h3 {
   background-color: var(--secondary-color);
 }
 
+.cta-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: rgba(0, 102, 204, 0.4);
+  box-shadow: none;
+}
+.cta-outline:hover {
+  background: rgba(0, 102, 204, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.15);
+}
+
+.cta-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
 /* Content sections */
 .content-section {
   padding: 7rem 0;

@@ -9,7 +9,20 @@
   <div class="hero-content animate-fade-in">
     <h1>Ignacio Loyola</h1>
     <p class="subtitle">{{ i18n "hero.subtitle" }}</p>
-    <a href="mailto:hi@ignacio.tech" class="cta-button">{{ i18n "hero.cta" }}</a>
+    <div class="cta-group">
+      {{ with site.Params.social.linkedin }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="cta-button cta-outline">LinkedIn</a>
+      {{ end }}
+      {{ with site.Params.social.email }}
+        <a href="mailto:{{ . }}" class="cta-button">Email</a>
+      {{ end }}
+      {{ with site.Params.social.mastodon }}
+        <a href="{{ . }}" target="_blank" rel="me noopener noreferrer" class="cta-button cta-outline">Mastodon</a>
+      {{ end }}
+      {{ with site.Params.social.medium }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="cta-button cta-outline">Medium</a>
+      {{ end }}
+    </div>
   </div>
   <div class="hero-portrait">
     {{ partial "image.html" (dict "page" . "src" "/portrait.jpg" "alt" "Ignacio Loyola" "class" "hero-img" "width" 1600 "loading" "eager") }}
