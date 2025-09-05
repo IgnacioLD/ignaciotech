@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ .RelPermalink | absURL }}">
   {{- else }}
     {{- with . | minify | fingerprint }}
-      <link rel="preload" as="style" href="{{ .RelPermalink | absURL }}">
+      <link rel="preload" as="style" href="{{ .RelPermalink | absURL }}" crossorigin="anonymous">
       <link rel="stylesheet" href="{{ .RelPermalink | absURL }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{- end }}
   {{- end }}
