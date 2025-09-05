@@ -48,7 +48,7 @@ Built with modern Android development practices:
 
 ## Community
 
-The project is a small but growing community:
+This is a small, volunteer‑led project in early development. There are no production deployments yet; we’re prototyping and gathering feedback with shelters.
 
 - **16+ Active Contributors** from 8 countries
 - **Multiple Shelter Pilots** in Spain and Portugal
@@ -66,13 +66,12 @@ The project is a small but growing community:
 
 ## Current Roadmap
 
-Active development focuses on:
+Near‑term focus:
 
-1. **iOS Application** to reach all shelter staff
-2. **API Standardization** for third-party integrations
-3. **Machine Learning Features** for behavior prediction
-4. **Accessibility Improvements** for diverse users
-5. **Internationalization** for global deployment
+1. Small pilot workflows with a partner shelter
+2. Basic admin features and data model
+3. Simple web dashboard MVP
+4. Accessibility and reliability basics
 
 ## Get Involved
 

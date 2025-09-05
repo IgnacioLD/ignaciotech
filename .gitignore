@@ -34,3 +34,6 @@ yarn.lock
 
 # Log files
 *.log
+
+# Local source snapshot (do not track)
+/ignaciodelgado/
