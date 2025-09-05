@@ -53,6 +53,10 @@ body {
   position: relative;
 }
 
+/* Normalize link colors (avoid purple visited links) */
+a { color: var(--primary-color); }
+a:visited { color: var(--primary-color); }
+
 /* Prevent horizontal overflow on small screens */
 html, body {
   max-width: 100%;
@@ -539,8 +543,8 @@ h3 {
 }
 
 .cta-button.secondary {
-  background: transparent;
-  color: var(--text-secondary);
+  background: var(--surface-color);
+  color: var(--text-color);
   border-color: var(--border-color);
   box-shadow: none;
 }
@@ -552,6 +556,9 @@ h3 {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px var(--shadow-color);
 }
+
+/* Hide duplicate dark mode toggle inside collapsible mobile menu */
+.mobile-menu .dark-mode-toggle { display: none !important; }
 
 .blog-back {
   display: flex;
@@ -1043,9 +1050,7 @@ h3 {
 .dark-mode a:hover { 
   color: #93c5fd; 
 }
-.dark-mode a:visited { 
-  color: #a78bfa; 
-}
+.dark-mode a:visited { color: #60a5fa; }
 .dark-mode .nav-menu a { 
   color: var(--text-color); 
 }
@@ -1195,6 +1200,24 @@ h3 {
     padding: 0 1.5rem;
   }
   
+  /* Improve text readability on mobile */
+  .blog-content,
+  .project-content {
+    font-size: 1.0625rem; /* ~17px base: slightly tuned */
+    line-height: 1.85;
+    margin: 0 auto 3rem;
+  }
+  .blog-content h2, .blog-content h3, .blog-content h4,
+  .project-content h2, .project-content h3, .project-content h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .blog-content > p:first-of-type,
+  .project-content p:first-of-type {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
   .featured-projects .card-grid,
   .all-projects .card-grid,
   .card-grid {
@@ -1221,6 +1244,11 @@ h3 {
   .container {
     padding: 0 1rem;
   }
+  
+  /* Slightly larger base for very small screens improves readability */
+  body { font-size: 18px; line-height: 1.8; }
+  .blog-content,
+  .project-content { font-size: 1rem; }
   
   .stats-grid {
     grid-template-columns: 1fr;
