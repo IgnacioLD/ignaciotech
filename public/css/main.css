@@ -287,42 +287,20 @@ h3 {
 
 /* Hero section */
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.85) 100%), url('/portrait.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  position: relative;
-  padding: 2rem;
+  text-align: left;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(0, 102, 204, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(0, 128, 255, 0.03) 0%, transparent 50%);
-  opacity: 1;
-}
+/* minimal hero: no overlays */
 
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: -10% -10% auto -10%;
-  height: 40%;
-  background: conic-gradient(from 180deg at 50% 50%, rgba(37,99,235,0.15), rgba(0,162,255,0.12), rgba(37,99,235,0.15));
-  filter: blur(40px);
-  opacity: 0.6;
-  pointer-events: none;
-}
-
+.hero-inner { max-width: 1100px; width: 100%; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.hero-copy { max-width: 720px; }
 .hero-content {
   position: relative;
   z-index: 1;
@@ -332,13 +310,24 @@ h3 {
 
 /* no separate hero portrait element when using background image */
 
-.hero h1 {
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: white;
-  letter-spacing: -0.02em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.4);
+.hero h1 { font-weight: 700; margin-bottom: 0.75rem; color: var(--text-color); letter-spacing: -0.02em; }
+.lead { font-size: 1.125rem; margin: 0.5rem 0; color: var(--text-secondary); }
+.explore { margin: 1rem 0 1.25rem; color: var(--text-secondary); }
+.explore a { color: var(--text-color); text-decoration: none; }
+.explore a:hover { text-decoration: underline; }
+.connect { margin-top: 0.5rem; color: var(--text-secondary); }
+.icon-row { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+.icon-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--border-color); color: var(--text-color); background: var(--surface-color); }
+.icon-link:hover { border-color: var(--text-color); }
+
+@media (min-width: 900px) {
+  .hero-inner { grid-template-columns: 1.2fr 0.8fr; }
 }
+
+.post-list { list-style: none; padding: 0; margin: 2rem auto 0; max-width: 700px; }
+.post-item { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+.post-item a { color: var(--text-color); text-decoration: none; }
+.post-item a:hover { text-decoration: underline; }
 
 .hero .subtitle {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
