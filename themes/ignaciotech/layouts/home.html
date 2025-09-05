@@ -144,6 +144,14 @@
       {{ $p2 := site.GetPage (print "projects/" .slug) }}
       {{ $page := or $p1 $p2 }}
       <article class="featured-project-card" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
+        <!-- Preview Image -->
+        <div class="project-image-placeholder" aria-hidden="true">
+          {{ if .image }}
+            {{ partial "image.html" (dict "page" $page "src" .image "alt" .name "class" "project-preview-image" "width" 1200) }}
+          {{ else }}
+            <img src="/images/placeholders/project-apps.svg" alt="" class="project-preview-image" aria-hidden="true">
+          {{ end }}
+        </div>
         <!-- Status Badge -->
         {{ $statusClass := "" }}
         {{ if eq .status "Live" }}{{ $statusClass = "live" }}{{ end }}
@@ -164,7 +172,7 @@
         </div>
         
         <!-- Team Size -->
-        <div class="project-team">{{ .team_size }}</div>
+        {{/* hide team size on home to reduce clutter */}}
         
         <!-- Description -->
         <p>{{ .description }}</p>
@@ -174,7 +182,7 @@
         <div class="project-stack">
           <div class="project-stack-title">{{ site.Data.ui.projects.tech_stack | default "Tech Stack" }}</div>
           <div class="stack-list">
-            {{ range .stack }}
+            {{ range (first 4 .stack) }}
             <span class="stack-item">{{ . }}</span>
             {{ end }}
           </div>
@@ -182,16 +190,7 @@
         {{ end }}
         
         <!-- Key Features -->
-        {{ if .features }}
-        <div class="project-features">
-          <div class="project-features-title">{{ site.Data.ui.projects.key_features | default "Key Features" }}</div>
-          <div class="features-list">
-            {{ range .features }}
-            <div class="feature-item">{{ . }}</div>
-            {{ end }}
-          </div>
-        </div>
-        {{ end }}
+        {{/* omit feature list on home to keep cards clean */}}
         
         <!-- Links -->
         {{ if .links }}
