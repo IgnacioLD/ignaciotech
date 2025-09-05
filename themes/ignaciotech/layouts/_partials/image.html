@@ -20,16 +20,8 @@
 {{- else if (hasSuffix $src ".svg") -}}
   <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="{{ $loading }}" decoding="async">
 {{- else -}}
-  {{- $res := nil -}}
-  {{- if and $page $src -}}
-    {{- with $page.Resources -}}
-      {{- $res = .GetMatch $src -}}
-    {{- end -}}
-  {{- end -}}
-  {{- if not $res -}}
-    {{- $trim := strings.TrimPrefix "/" $src -}}
-    {{- $res = resources.Get $trim -}}
-  {{- end -}}
+  {{- $trim := strings.TrimPrefix "/" $src -}}
+  {{- $res := resources.Get $trim -}}
 
   {{- if $res -}}
     {{- $w480 := $res.Resize (printf "480x webp") -}}
