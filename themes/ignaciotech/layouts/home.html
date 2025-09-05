@@ -11,6 +11,9 @@
     <p class="subtitle">{{ i18n "hero.subtitle" }}</p>
     <a href="mailto:hi@ignacio.tech" class="cta-button">{{ i18n "hero.cta" }}</a>
   </div>
+  <div class="hero-portrait">
+    {{ partial "image.html" (dict "page" . "src" "/portrait.jpg" "alt" "Ignacio Loyola" "class" "hero-img" "width" 1600 "loading" "eager") }}
+  </div>
 </section>
 
 <!-- About Section -->

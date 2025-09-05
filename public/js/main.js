@@ -1,6 +1,30 @@
 (() => {
   // <stdin>
   document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (burger && mobileMenu) {
+      const closeMenu = () => {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("hidden", "");
+        burger.setAttribute("aria-expanded", "false");
+      };
+      const openMenu = () => {
+        mobileMenu.classList.add("open");
+        mobileMenu.removeAttribute("hidden");
+        burger.setAttribute("aria-expanded", "true");
+      };
+      burger.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("open")) closeMenu();
+        else openMenu();
+      });
+      mobileMenu.addEventListener("click", (e) => {
+        if (e.target.closest("a")) closeMenu();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    }
     const interactiveSkip = (el) => !!el.closest("a, button, .project-links, .copy-code-btn");
     document.querySelectorAll(".card[data-href]").forEach((card) => {
       const href = card.getAttribute("data-href");
