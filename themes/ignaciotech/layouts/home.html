@@ -1,25 +1,23 @@
 {{ define "main" }}
-{{ $projects := site.Data.projects }}
-{{ if eq site.Language.Lang "es" }}
-  {{ $projects = site.Data.es.projects }}
-{{ end }}
-{{ $blogPages := where .Site.RegularPages "Section" "blog" }}
 
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-copy">
-      <h1>{{ .Params.hero.title | default "Ignacio Loyola" }}</h1>
-      <p class="lead">{{ .Params.hero.lead1 | default "Android / AI developer based in Valencia, Spain. I build mobile apps and explore practical AI solutions." }}</p>
-      <p class="lead">{{ .Params.hero.lead2 | default "I like to share what I learn and build things that might be helpful to others." }}</p>
+      <h1>Hallöchen,</h1>
+      <p class="lead">My name is Ignacio Loyola and I'm a Software / AI Developer based in Valencia, Spain who's been building software professionally for 3+ years.</p>
+      
+      <p>My ikigai—my reason for being—is to learn, build, and teach about technology that empowers and enhances human capabilities.</p>
+      
+      <p>I bring this to life by creating software and hardware solutions that bridge the digital and physical worlds to benefit all life. Whether working with salvaged components or state-of-the-art technology, my approach is always centered on learning, building, and teaching.</p>
+      
       <div class="explore">
-        <strong>{{ .Params.hero.explore_text | default "Explore" }}</strong> ·
-        <a href="/projects/">Projects</a>
-        · <a href="/blog/">Blog</a>
-        · <a href="/archives/">Archives</a>
+        <strong>Explore</strong> ·
+        To look around, you can check out my <a href="/projects/">projects</a>, read the <a href="/blog/">blog</a>, or browse the <a href="/archives/">archives</a>.
       </div>
+      
       <div class="connect">
-        <strong>{{ .Params.hero.connect_text | default "Connect" }}</strong>
+        <strong>Connect</strong>
         <div class="icon-row">
           {{ with site.Params.social.linkedin }}
           <a class="icon-link" href="{{ . }}" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -36,12 +34,16 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.43 13.1c-.3 1.55-2.7 3.26-5.47 3.56-1.44.16-2.86.31-4.38.25-2.48-.11-4.44-.59-4.44-.59 0 .24.02.47.06.69.33 1.88 2.49 1.99 4.53 2.05 2.06.06 3.9-.51 3.9-.51l.08 1.74s-1.44.77-4.01.91c-1.42.08-3.18-.04-5.23-.58-4.45-1.17-5.23-5.86-5.23-10.66 0-4.79 3.14-6.2 3.14-6.2 1.58-.73 4.3-1.05 7.1-1.08h.07c2.8.03 5.52.36 7.1 1.08 0 0 3.14 1.41 3.14 6.2 0 .86-.11 1.87-.36 2.64ZM17.9 8.84c-.69 0-1.24.26-1.59.78l-.11.18-.11-.18c-.35-.52-.9-.78-1.59-.78-1.17 0-2.03.78-2.03 2.47v3.98h1.93v-3.83c0-.74.31-1.12.93-1.12.69 0 1.04.45 1.04 1.35v3.6h1.92v-3.6c0-.9.35-1.35 1.04-1.35.62 0 .93.38.93 1.12v3.83h1.94v-3.98c0-1.69-.86-2.47-2.03-2.47Z"/></svg>
           </a>
           {{ end }}
-          {{ with site.Params.social.medium }}
-          <a class="icon-link" href="{{ . }}" aria-label="Medium" target="_blank" rel="noopener noreferrer">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 7.5c0-.3.1-.5.3-.7L7.2 3.1V3H1v.1l2.9 3.7c.2.2.3.5.3.7v8.7c0 .3-.1.5-.3.7L1 20.6V20h6.6v-.1l-2.9-3.7c-.2-.2-.3-.5-.3-.7V7.5Zm8.9 12.5c2.6 0 4.8-3.7 4.8-8.2S15.5 3.6 12.9 3.6s-4.8 3.7-4.8 8.2 2.2 8.2 4.8 8.2Zm8.5-1.1c.7 0 1.3-3.2 1.3-7.1s-.6-7.1-1.3-7.1c-.7 0-1.3 3.2-1.3 7.1s.6 7.1 1.3 7.1Z"/></svg>
+          {{ with site.Params.social.github }}
+          <a class="icon-link" href="{{ . }}" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.479C19.137 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2Z"/></svg>
           </a>
           {{ end }}
         </div>
+        
+        <p>Whether you're here by chance or intention, thanks for visiting.</p>
+        
+        <p>- Ignacio</p>
       </div>
     </div>
     <div class="hero-side">
@@ -49,165 +51,5 @@
     </div>
   </div>
 </section>
-
-<!-- Featured Writing (cards) -->
-{{ if .Params.sections.featured_writing.enabled | default true }}
-<section class="content-section featured-blog">
-  <div class="container">
-    <h2 class="section-title">{{ .Params.sections.featured_writing.title | default "Featured Writing" }}</h2>
-    {{ $featured := where $blogPages "Params.featured" true }}
-    {{ if gt (len $featured) 0 }}
-      <div class="blog-grid">
-        {{ range first (.Params.sections.featured_writing.count | default 3) $featured }}
-        <article class="blog-card" data-href="{{ .RelPermalink }}" role="link" tabindex="0" aria-label="Open {{ .Title }}">
-          <!-- Type Badge -->
-          {{ if .Params.type }}
-          <span class="blog-type-badge">{{ .Params.type }}</span>
-          {{ end }}
-          
-          <div class="blog-preview">
-            {{ if .Params.image }}
-              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-preview-image">
-            {{ else }}
-              <div class="blog-preview-gradient">
-                <span class="blog-preview-icon">📝</span>
-              </div>
-            {{ end }}
-          </div>
-          
-          <div class="blog-content-preview">
-            <!-- Enhanced Meta -->
-            <div class="enhanced-blog-meta">
-              <div class="blog-meta-left">
-                <div class="blog-tags">
-                  {{ range first 2 .Params.categories }}
-                    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a>
-                  {{ end }}
-                </div>
-                {{ if .Params.level }}
-                <span class="blog-level {{ .Params.level | lower }}">{{ .Params.level }}</span>
-                {{ end }}
-              </div>
-              <div class="blog-meta-right">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                <div class="blog-readtime">{{ .ReadingTime }} min read</div>
-              </div>
-            </div>
-            
-            <h3 class="blog-title">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h3>
-            <p class="blog-excerpt">{{ .Description | default (.Summary | truncate 140) }}</p>
-          </div>
-        </article>
-        {{ end }}
-      </div>
-    {{ end }}
-  </div>
-</section>
-{{ end }}
-
-<!-- Recent Writing (list) -->
-{{ if .Params.sections.recent_writing.enabled | default true }}
-<section class="content-section">
-  <div class="container">
-    <div class="projects-section">
-      <h2 class="projects-section-title">{{ .Params.sections.recent_writing.title | default "Recent Writing" }}</h2>
-      <ul class="post-list">
-        {{ $recent := where $blogPages "Params.featured" "ne" true }}
-        {{ range first (.Params.sections.recent_writing.count | default 5) $recent }}
-        <li class="post-item">
-          <div class="post-item-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </div>
-          <div class="post-item-date">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-          </div>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </div>
-</section>
-{{ end }}
-
-<!-- Projects Section -->
-{{ if .Params.sections.projects.enabled | default true }}
-<section id="projects" class="content-section featured-projects">
-  <div class="container">
-    <h2 class="section-title">{{ .Params.sections.projects.title | default (i18n "projects.title") | default "Projects" }}</h2>
-    <p class="section-subtitle">{{ .Params.sections.projects.subtitle | default (i18n "projects.subtitle") | default "A selection of projects I've worked on" }}</p>
-    
-    <div class="card-grid">
-      {{ range $projects.projects }}
-      {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
-      {{ $p2 := site.GetPage (print "projects/" .slug) }}
-      {{ $page := or $p1 $p2 }}
-      <article class="featured-project-card" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
-        <!-- Preview Image -->
-        <div class="project-image-placeholder" aria-hidden="true">
-          {{ if .image }}
-            {{ partial "image.html" (dict "page" $page "src" .image "alt" .name "class" "project-preview-image" "width" 1200) }}
-          {{ else }}
-            <img src="/images/placeholders/project-apps.svg" alt="" class="project-preview-image" aria-hidden="true">
-          {{ end }}
-        </div>
-        <!-- Status Badge -->
-        {{ $statusClass := "" }}
-        {{ if eq .status "Live" }}{{ $statusClass = "live" }}{{ end }}
-        {{ if eq .status "Active Development" }}{{ $statusClass = "active" }}{{ end }}
-        {{ if eq .status "Completed" }}{{ $statusClass = "completed" }}{{ end }}
-        <span class="project-status {{ $statusClass }}">{{ .status }}</span>
-        
-        <!-- Project Header -->
-        <div class="project-header">
-          <h3>
-            {{ if $page }}
-              <a href="{{ $page.RelPermalink }}">{{ .name }}</a>
-            {{ else }}
-              {{ .name }}
-            {{ end }}
-          </h3>
-          <span class="project-year">{{ .year }}</span>
-        </div>
-        
-        <!-- Team Size -->
-        {{/* hide team size on home to reduce clutter */}}
-        
-        <!-- Description -->
-        <p>{{ .description }}</p>
-        
-        <!-- Tech Stack -->
-        {{ if .stack }}
-        <div class="project-stack">
-          <div class="project-stack-title">{{ site.Data.ui.projects.tech_stack | default "Tech Stack" }}</div>
-          <div class="stack-list">
-            {{ range (first 4 .stack) }}
-            <span class="stack-item">{{ . }}</span>
-            {{ end }}
-          </div>
-        </div>
-        {{ end }}
-        
-        <!-- Key Features -->
-        {{/* omit feature list on home to keep cards clean */}}
-        
-        <!-- Links -->
-        {{ if .links }}
-        <div class="project-links">
-          {{ range .links }}
-          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-link">
-            <span>{{ .name }}</span>
-            <span class="link-icon">↗</span>
-          </a>
-          {{ end }}
-        </div>
-        {{ end }}
-      </article>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
 
 {{ end }}

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" class="light-mode">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
 </head>
-<body class="light-theme">
+<body>
   <header class="header">
     {{ partial "header.html" . }}
   </header>
@@ -14,23 +14,45 @@
     {{ partial "footer.html" . }}
   </footer>
   <script>
-    // Dark mode toggle functionality
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    // Theme system: system → light → dark → system
     const html = document.documentElement;
+    let currentTheme = localStorage.getItem('theme') || 'system';
     
-    darkModeToggle?.addEventListener('click', () => {
-      html.classList.toggle('dark-mode');
-      html.classList.toggle('light-mode');
-      localStorage.setItem('theme', html.classList.contains('dark-mode') ? 'dark' : 'light');
+    function applyTheme(theme) {
+      html.classList.remove('light-mode', 'dark-mode');
+      
+      if (theme === 'system') {
+        // Use system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        html.classList.add(prefersDark ? 'dark-mode' : 'light-mode');
+      } else {
+        html.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
+      }
+    }
+    
+    function getNextTheme(current) {
+      const themes = ['system', 'light', 'dark'];
+      const index = themes.indexOf(current);
+      return themes[(index + 1) % themes.length];
+    }
+    
+    // Apply initial theme
+    applyTheme(currentTheme);
+    
+    // Listen for system theme changes when using system preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (currentTheme === 'system') {
+        applyTheme('system');
+      }
     });
     
-    // Load saved theme or default to light
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      html.className = savedTheme === 'dark' ? 'dark-mode' : 'light-mode';
-    } else {
-      html.className = 'light-mode';
-    }
+    // Theme toggle functionality
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    darkModeToggle?.addEventListener('click', () => {
+      currentTheme = getNextTheme(currentTheme);
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+    });
 
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', () => {

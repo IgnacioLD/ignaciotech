@@ -23,7 +23,7 @@ theme = 'ignaciotech'
 [params.social]
   linkedin = "https://linkedin.com/in/shirabit"
   mastodon = "https://mastodon.social/@shirabit"
-  medium = "https://medium.com/@shirabit"
+  github = "https://github.com/ignacio-loyola"
   email = "hi@ignacio.tech"
   x = "https://x.com/shirabit"
 

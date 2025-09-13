@@ -21,47 +21,26 @@
     </div>
     {{ end }}
     
-    <div class="blog-layout">
-      <div class="blog-content">
-        {{ .Content }}
+    <div class="blog-content">
+      {{ .Content }}
 
-        {{ with .Params.references }}
-        <section class="references-section" id="references">
-          <h2>References</h2>
-          <ol class="references-list">
-            {{ range . }}
-              <li>
-                {{- if .url -}}
-                  <a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .title | default .url }}</a>
-                {{- else -}}
-                  {{ .title }}
-                {{- end -}}
-                {{ with .note }}<span class="reference-note"> — {{ . }}</span>{{ end }}
-              </li>
-            {{ end }}
-          </ol>
-        </section>
-        {{ end }}
-      </div>
-      <aside class="blog-notes" aria-label="Author Notes">
-        <div class="notes-card">
-          <h3>Author Notes</h3>
-          {{ $notes := .Params.author_notes }}
-          {{ if $notes }}
-            {{ if (reflect.IsSlice $notes) }}
-              <ul class="notes-list">
-                {{ range $notes }}
-                  <li>{{ . | markdownify }}</li>
-                {{ end }}
-              </ul>
-            {{ else }}
-              <div class="notes-body">{{ $notes | markdownify }}</div>
-            {{ end }}
-          {{ else }}
-            <p class="notes-note">No notes for this post.</p>
+      {{ with .Params.references }}
+      <section class="references-section" id="references">
+        <h2>References</h2>
+        <ol class="references-list">
+          {{ range . }}
+            <li>
+              {{- if .url -}}
+                <a href="{{ .url }}" rel="noopener noreferrer" target="_blank">{{ .title | default .url }}</a>
+              {{- else -}}
+                {{ .title }}
+              {{- end -}}
+              {{ with .note }}<span class="reference-note"> — {{ . }}</span>{{ end }}
+            </li>
           {{ end }}
-        </div>
-      </aside>
+        </ol>
+      </section>
+      {{ end }}
     </div>
     
     {{ if .Params.tags }}
