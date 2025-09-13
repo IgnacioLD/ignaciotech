@@ -1,8 +1,8 @@
 {{ define "main" }}
 
 <!-- Hero Section -->
-<section class="hero" data-layout="{{ .Params.layout.style | default "minimal" }}">
-  <div class="hero-container"{{ with .Params.layout.max_width }} style="max-width: {{ . }}"{{ end }}>
+<section class="hero" data-layout="{{ .Params.hero_layout.style | default "minimal" }}">
+  <div class="hero-container"{{ with .Params.hero_layout.max_width }} style="max-width: {{ . }}"{{ end }}>
     <div class="hero-content">
       <!-- Greeting -->
       {{ with .Params.hero.greeting }}
@@ -57,7 +57,7 @@
     </div>
     
     <!-- Portrait -->
-    {{ if and (.Params.layout.show_portrait | default true) (.Params.hero.portrait.show | default true) }}
+    {{ if and (.Params.hero_layout.show_portrait | default true) (.Params.hero.portrait.show | default true) }}
     <div class="hero-portrait">
       {{ with .Params.hero.portrait }}
       {{ partial "image.html" (dict "page" $ "src" .src "alt" .alt "class" "hero-portrait-img" "width" 1200 "loading" "lazy" "fetchpriority" "low") }}
