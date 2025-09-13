@@ -109,5 +109,48 @@ document.addEventListener('DOMContentLoaded', () => {
     pre.appendChild(btn);
   });
 
-  // Minimal: remove scroll reveal animations
+  // Smooth page transitions
+  const addPageTransitions = () => {
+    // Add loading class to body for fade-in effect
+    document.body.classList.add('page-loaded');
+    
+    // Smooth scroll for internal links
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link && link.hash && link.hostname === location.hostname) {
+        e.preventDefault();
+        const target = document.querySelector(link.hash);
+        if (target) {
+          target.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+          });
+        }
+      }
+    });
+    
+    // Intersection observer for cards fade-in
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '50px' });
+      
+      // Observe cards and sections
+      document.querySelectorAll('.card, .content-section').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    }
+  };
+  
+  // Initialize page transitions
+  addPageTransitions();
 });

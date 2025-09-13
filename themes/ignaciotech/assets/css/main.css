@@ -55,6 +55,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  opacity: 0;
+}
+
+body.page-loaded {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
 }
 
 /* Normalize link colors (avoid purple visited links) */
@@ -530,6 +536,7 @@ h3 {
 .hero-navigation strong {
   color: var(--text-color);
   font-weight: 600;
+  font-family: var(--heading-font);
 }
 
 .hero-navigation a {
@@ -569,6 +576,7 @@ h3 {
   color: var(--text-color);
   font-weight: 600;
   font-size: 1.05rem;
+  font-family: var(--heading-font);
   display: block;
   margin-bottom: 1.5rem;
 }
@@ -639,9 +647,9 @@ h3 {
   margin: 1rem 0 0;
   color: var(--text-color);
   font-size: 1.5rem;
-  font-weight: 600;
-  font-family: var(--heading-font);
-  font-style: italic;
+  font-weight: 400;
+  font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-style: normal;
 }
 
 /* Portrait */
@@ -962,30 +970,32 @@ a.cta-outline:visited { color: var(--primary-color); }
 }
 
 .section-title {
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 2rem;
   text-align: center;
   color: var(--text-color);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 .section-title::after {
   content: '';
   display: block;
-  width: 72px;
-  height: 4px;
-  margin: 0.75rem auto 0;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
+  width: 64px;
+  height: 2px;
+  margin: 1.5rem auto 0;
+  border-radius: 1px;
+  background: var(--primary-color);
+  opacity: 0.8;
 }
 
 .section-subtitle {
   font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 5rem;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 4rem;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -1169,8 +1179,21 @@ a.cta-outline:visited { color: var(--primary-color); }
   padding: 0 1rem;
 }
 
-.card { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; }
-.card:hover { border-color: var(--text-secondary); }
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  will-change: transform;
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+  transform: translate3d(0, -4px, 0);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
 
 /* removed pointer-follow glow */
 
@@ -1180,11 +1203,13 @@ a.cta-outline:visited { color: var(--primary-color); }
 }
 
 .card h3 {
+  font-family: var(--heading-font);
   font-size: 1.375rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-color);
   letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .card h3 a { color: inherit; text-decoration: none; }
@@ -2215,10 +2240,11 @@ a.cta-outline:visited { color: var(--primary-color); }
   display: flex;
   flex-direction: column;
   position: relative;
+  will-change: transform;
 }
 
 .featured-blog .blog-card:hover {
-  transform: translateY(-6px);
+  transform: translate3d(0, -6px, 0);
   box-shadow: 0 16px 32px var(--shadow-color);
   border-color: var(--primary-color);
 }
@@ -2311,7 +2337,7 @@ a.cta-outline:visited { color: var(--primary-color); }
 }
 
 .blog-card:hover {
-  transform: translateY(-4px);
+  transform: translate3d(0, -4px, 0);
   box-shadow: 0 8px 16px var(--shadow-color);
 }
 
@@ -2396,6 +2422,8 @@ a.cta-outline:visited { color: var(--primary-color); }
   font-size: 1.375rem;
   font-weight: 600;
   line-height: 1.3;
+  font-family: var(--heading-font);
+  letter-spacing: -0.01em;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2837,9 +2865,16 @@ a.cta-outline:visited { color: var(--primary-color); }
 /* Responsive */
 @media (max-width: 768px) {
   .blog-grid,
-  .featured-blog .blog-grid {
+  .featured-blog .blog-grid,
+  .card-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    border-radius: 8px;
   }
   
   .blog-navigation {
@@ -2849,6 +2884,15 @@ a.cta-outline:visited { color: var(--primary-color); }
   .project-item {
     flex-direction: column;
     align-items: flex-start;
+  }
+  
+  /* Improve touch targets */
+  .card h3 a,
+  .blog-title a {
+    display: block;
+    padding: 0.25rem 0;
+    min-height: 44px;
+    line-height: 1.4;
   }
   
   .project-info {
