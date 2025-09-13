@@ -6,7 +6,6 @@ hero:
   greeting: "Hallöchen,"
   introduction: "My name is Ignacio Loyola and I'm a Software / AI Developer based in Valencia, Spain who's been building software professionally for 3+ years."
   mission: "My ikigai—my reason for being—is to learn, build, and teach about technology that empowers and enhances human capabilities."
-  approach: "I bring this to life by creating software and hardware solutions that bridge the digital and physical worlds to benefit all life. Whether working with salvaged components or state-of-the-art technology, my approach is always centered on learning, building, and teaching."
   
   navigation:
     title: "Explore"
