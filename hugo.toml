@@ -1,11 +1,13 @@
-baseURL = 'https://ignacio.tech'
+# Hugo Configuration for Modern Developer Portfolio Theme
+baseURL = 'https://example.com' # Change this to your domain
 defaultContentLanguage = 'en'
-theme = 'ignaciotech'
+theme = 'modern-dev-portfolio' # Change this to your theme name
 
+# Site Information
 [params]
-  author = "Ignacio Loyola"
-  description = "Android Developer & AI Engineer"
-  location = "Valencia, Spain"
+  author = "Your Name" # Change this
+  description = "Your professional tagline" # Change this
+  location = "Your Location" # Optional
   
   # Theme customization
   darkModeEnabled = true
@@ -20,12 +22,13 @@ theme = 'ignaciotech'
   projectsEnabled = true
   maxFeaturedProjects = 3
 
+# Social Media Links (customize as needed)
 [params.social]
-  linkedin = "https://linkedin.com/in/shirabit"
-  mastodon = "https://mastodon.social/@shirabit"
-  github = "https://github.com/ignacio-loyola"
-  email = "hi@ignacio.tech"
-  x = "https://x.com/shirabit"
+  linkedin = "https://linkedin.com/in/your-profile" # Optional
+  mastodon = "https://mastodon.social/@your-handle" # Optional  
+  github = "https://github.com/your-username" # Optional
+  email = "your-email@example.com" # Optional
+  x = "https://x.com/your-handle" # Optional
 
 [languages]
   [languages.en]

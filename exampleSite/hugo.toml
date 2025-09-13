@@ -1,0 +1,52 @@
+# Example Site Configuration for Modern Developer Portfolio Theme
+baseURL = 'https://example.com'
+defaultContentLanguage = 'en'
+theme = 'modern-dev-portfolio'
+
+# Site Information
+[params]
+  author = "Alex Smith"
+  description = "Software Developer & Designer"
+  location = "San Francisco, CA"
+  
+  # Theme customization
+  darkModeEnabled = true
+  showFeaturedImage = true
+  
+  # Blog settings
+  postsPerPage = 10
+  showReadingTime = true
+  showCategories = true
+  
+  # Projects settings
+  projectsEnabled = true
+  maxFeaturedProjects = 3
+
+# Social Media Links
+[params.social]
+  linkedin = "https://linkedin.com/in/alexsmith"
+  github = "https://github.com/alexsmith"
+  email = "alex@example.com"
+  x = "https://x.com/alexsmith"
+
+[languages]
+  [languages.en]
+    languageCode = 'en-us'
+    title = 'Alex Smith'
+    weight = 1
+    [languages.en.params]
+      description = "Alex Smith - Software Developer & Designer creating beautiful, functional applications in San Francisco."
+      author = "Alex Smith"
+      email = "alex@example.com"
+    [[languages.en.menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 1
+    [[languages.en.menu.main]]
+      name = "Blog"
+      url = "/blog/"
+      weight = 2
+    [[languages.en.menu.main]]
+      name = "Projects"
+      url = "/projects/"
+      weight = 3

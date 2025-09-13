@@ -1,30 +1,45 @@
 ---
-title: "Ignacio Loyola - Android Developer & AI Engineer | Portfolio"
-description: "Ignacio Loyola - Senior Android Developer & AI Engineer with 5+ years experience. Specializing in mobile development, machine learning, and open-source projects. Based in Valencia, Spain."
-keywords: ["Android Developer", "AI Engineer", "Mobile Development", "Kotlin", "Python", "Machine Learning", "Valencia", "Spain", "Software Engineer"]
+title: "Ignacio Loyola - Software Developer & AI Engineer"
+description: "Software developer and AI engineer passionate about creating technology that enhances human capabilities. Building mobile apps and hardware solutions in Valencia, Spain."
 
+# Hero Section Configuration
 hero:
-  title: "Ignacio Loyola"
-  lead1: "Android / AI developer based in Valencia, Spain. I build mobile apps and explore practical AI solutions."
-  lead2: "I like to share what I learn and build things that might be helpful to others."
-  explore_text: "Explore"
-  connect_text: "Connect"
-
-sections:
-  featured_writing:
-    title: "Featured Writing"
-    enabled: true
-    count: 3
+  greeting: "Hallöchen,"
+  introduction: "My name is Ignacio Loyola and I'm a Software / AI Developer based in Valencia, Spain who's been building software professionally for 3+ years."
+  mission: "My ikigai—my reason for being—is to learn, build, and teach about technology that empowers and enhances human capabilities."
+  approach: "I bring this to life by creating software and hardware solutions that bridge the digital and physical worlds to benefit all life. Whether working with salvaged components or state-of-the-art technology, my approach is always centered on learning, building, and teaching."
   
-  recent_writing:
-    title: "Recent Writing" 
-    enabled: true
-    count: 5
-    
-  projects:
-    title: "Projects"
-    subtitle: "A selection of projects I've worked on, from mobile apps to AI experiments"
-    enabled: true
+  # Navigation Links
+  navigation:
+    title: "Explore"
+    description: "To look around, you can check out my"
+    links:
+      - name: "projects"
+        url: "/projects/"
+      - name: "blog"
+        url: "/blog/"
+      - name: "archives"
+        url: "/archives/"
+  
+  # Social Section
+  social:
+    title: "Connect"
+    closing_message: "Whether you're here by chance or intention, thanks for visiting."
+    signature: "- Ignacio"
+    show_icons: true
+  
+  # Portrait Image
+  portrait:
+    src: "/portrait.jpg"
+    alt: "Ignacio Loyola"
+    show: true
+
+# Layout Settings
+layout:
+  style: "minimal" # Options: minimal, centered, split
+  show_portrait: true
+  max_width: "1100px"
 ---
 
-Welcome to my digital space where I share my journey as an Android developer and AI engineer. Here you'll find insights about mobile development, artificial intelligence, and the projects I'm passionate about.
+<!-- This content appears after the hero section if needed -->
+<!-- You can add additional markdown content here that will appear below the hero -->
