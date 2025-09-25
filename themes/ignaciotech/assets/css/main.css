@@ -13,11 +13,14 @@
   --tertiary-color: #94a3b8;
   --success-color: #059669;
   --warning-color: #d97706;
-  
+
   /* Typography */
   --body-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --heading-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --reading-font: 'Georgia', 'Times New Roman', 'Times', serif;
+
+  /* Layout constraints */
+  --hero-max-width: 800px;
 }
 
 .dark-mode {
@@ -460,7 +463,7 @@ h3 {
 }
 
 .hero-container {
-  max-width: 800px;
+  max-width: var(--hero-max-width);
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -2982,7 +2985,7 @@ a.cta-outline:visited { color: var(--primary-color); }
 }
 
 .intro-section {
-  text-align: center;
+  text-align: left;
   margin-bottom: 6rem;
   max-width: 800px;
   margin-left: auto;
@@ -3036,7 +3039,7 @@ a.cta-outline:visited { color: var(--primary-color); }
 }
 
 .cta-section {
-  text-align: center;
+  text-align: left;
   padding: 4rem 2rem;
   background: var(--surface-color);
   border-radius: 1rem;

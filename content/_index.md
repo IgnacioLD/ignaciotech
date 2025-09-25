@@ -1,6 +1,6 @@
 ---
-title: "Ignacio L. D. - Software Developer & AI Engineer"
-description: "Software developer and AI engineer passionate about creating technology that enhances human capabilities. Building mobile apps and hardware solutions in Valencia, Spain."
+title: "Ignacio L. D. - AI Engineer & Android Developer in Valencia"
+description: "AI Engineer & Android Developer in Valencia, Spain. Building intelligent mobile solutions and leading open source projects."
 keywords: ["Android Developer", "AI Engineer", "Software Engineer", "Mobile Development", "Kotlin", "Python", "Machine Learning", "Open Source", "Valencia", "Spain", "Software Consultant"]
 image: "/logo.svg"
 
