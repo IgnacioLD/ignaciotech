@@ -1,0 +1,60 @@
+{{/* Usage: {{ partial "blog-card.html" (dict "post" . "compact" false) }} */}}
+{{ $post := .post }}
+{{ $compact := .compact | default false }}
+
+<article class="blog-card {{ if $compact }}compact-card{{ end }}" data-href="{{ $post.RelPermalink }}" role="link" tabindex="0" aria-label="Open {{ $post.Title }}">
+  {{ if not $compact }}
+  <!-- Type Badge -->
+  {{ if $post.Params.type }}
+  <span class="blog-type-badge">{{ $post.Params.type }}</span>
+  {{ end }}
+
+  <div class="blog-preview">
+    {{ if $post.Params.image }}
+      <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" class="blog-preview-image">
+    {{ else }}
+      <div class="blog-preview-gradient">
+        <span class="blog-preview-icon">📝</span>
+      </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="blog-content-preview">
+    {{ if not $compact }}
+    <!-- Enhanced Meta -->
+    <div class="enhanced-blog-meta">
+      <div class="blog-meta-left">
+        <div class="blog-tags">
+          {{ range first 2 $post.Params.categories }}
+            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="blog-tag">{{ . }}</a>
+          {{ end }}
+        </div>
+        {{ if $post.Params.level }}
+        <span class="blog-level {{ $post.Params.level | lower }}">{{ $post.Params.level }}</span>
+        {{ end }}
+      </div>
+      <div class="blog-meta-right">
+        <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "Jan 2, 2006" }}</time>
+        <div class="blog-readtime">{{ $post.ReadingTime }} min read</div>
+      </div>
+    </div>
+    {{ else }}
+    <!-- Compact Meta -->
+    <div class="blog-meta-compact">
+      <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "Jan 2" }}</time>
+      <span class="blog-readtime">{{ $post.ReadingTime }} min</span>
+    </div>
+    {{ end }}
+
+    <h3 class="blog-title">
+      <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+    </h3>
+
+    {{ if not $compact }}
+    <p class="blog-excerpt">{{ $post.Description | default ($post.Summary | truncate 140) }}</p>
+    {{ else }}
+    <p class="blog-excerpt">{{ $post.Description | default ($post.Summary | truncate 80) }}</p>
+    {{ end }}
+  </div>
+</article>

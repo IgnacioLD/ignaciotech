@@ -3,55 +3,42 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
-  <header class="header">
-    {{ partial "header.html" . }}
-  </header>
-  <main class="main">
-    {{ block "main" . }}{{ end }}
-  </main>
-  <footer class="footer">
-    {{ partial "footer.html" . }}
-  </footer>
+<body class="{{if .IsHome}}home{{end}}">
+  <div class="site-wrapper">
+    <header class="header">
+      {{ partial "header.html" . }}
+    </header>
+    <main class="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer class="footer">
+      {{ partial "footer.html" . }}
+    </footer>
+  </div>
   <script>
-    // Theme system: system → light → dark → system
+    // Simple theme toggle: light ↔ dark
     const html = document.documentElement;
-    let currentTheme = localStorage.getItem('theme') || 'system';
-    
+    let currentTheme = localStorage.getItem('theme') || 'light';
+
     function applyTheme(theme) {
       html.classList.remove('light-mode', 'dark-mode');
-      
-      if (theme === 'system') {
-        // Use system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        html.classList.add(prefersDark ? 'dark-mode' : 'light-mode');
-      } else {
-        html.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
-      }
+      html.classList.add(theme === 'dark' ? 'dark-mode' : 'light-mode');
     }
-    
+
     function getNextTheme(current) {
-      const themes = ['system', 'light', 'dark'];
-      const index = themes.indexOf(current);
-      return themes[(index + 1) % themes.length];
+      return current === 'dark' ? 'light' : 'dark';
     }
     
     // Apply initial theme
     applyTheme(currentTheme);
     
-    // Listen for system theme changes when using system preference
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (currentTheme === 'system') {
-        applyTheme('system');
-      }
-    });
-    
-    // Theme toggle functionality
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    darkModeToggle?.addEventListener('click', () => {
-      currentTheme = getNextTheme(currentTheme);
-      localStorage.setItem('theme', currentTheme);
-      applyTheme(currentTheme);
+    // Theme toggle functionality - handle all toggle buttons
+    document.querySelectorAll('.dark-mode-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        currentTheme = getNextTheme(currentTheme);
+        localStorage.setItem('theme', currentTheme);
+        applyTheme(currentTheme);
+      });
     });
 
     // Initialize on page load

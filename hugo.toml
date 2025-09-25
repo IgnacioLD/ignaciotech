@@ -1,9 +1,15 @@
-baseURL = 'https://ignacio.tech'
 defaultContentLanguage = 'en'
 theme = 'ignaciotech'
+enableRobotsTXT = true
+
+# Sitemap configuration
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.5
+  filename = 'sitemap.xml'
 
 [params]
-  author = "Ignacio Loyola"
+  author = "Ignacio L. D."
   description = "Software Developer & AI Engineer"
   location = "Valencia, Spain"
   
@@ -21,20 +27,20 @@ theme = 'ignaciotech'
   maxFeaturedProjects = 3
 
 [params.social]
-  linkedin = "https://linkedin.com/in/shirabit"
+  linkedin = "https://linkedin.com/in/IgnacioLD"
   mastodon = "https://mastodon.social/@shirabit"
-  github = "https://github.com/ignacio-loyola"
+  github = "https://github.com/IgnacioLD"
   email = "hi@ignacio.tech"
   x = "https://x.com/shirabit"
 
 [languages]
   [languages.en]
     languageCode = 'en-us'
-    title = 'Ignacio Loyola'
+    title = 'Ignacio L. D.'
     weight = 1
     [languages.en.params]
-      description = "Ignacio Loyola - Android Developer & AI Engineer with 5+ years programming experience. Specialized in mobile development, machine learning automation, and open-source projects in Valencia, Spain."
-      author = "Ignacio Loyola"
+      description = "Ignacio L. D. - Android Developer & AI Engineer with 5+ years programming experience. Specialized in mobile development, machine learning automation, and open-source projects in Valencia, Spain."
+      author = "Ignacio L. D."
       email = "hi@ignacio.tech"
     [[languages.en.menu.main]]
       name = "Home"
@@ -51,11 +57,11 @@ theme = 'ignaciotech'
 
 #  [languages.es]
 #    languageCode = 'es-es'
-#    title = 'Ignacio Loyola'
+#    title = 'Ignacio L. D.'
 #    weight = 2
 #    [languages.es.params]
-#      description = "Ignacio Loyola - Desarrollador Android e Ingeniero de IA con más de 5 años de experiencia en programación. Especializado en desarrollo móvil, automatización de aprendizaje automático y proyectos de código abierto en Valencia, España."
-#      author = "Ignacio Loyola"
+#      description = "Ignacio L. D. - Desarrollador Android e Ingeniero de IA con más de 5 años de experiencia en programación. Especializado en desarrollo móvil, automatización de aprendizaje automático y proyectos de código abierto en Valencia, España."
+#      author = "Ignacio L. D."
 #      email = "hi@ignacio.tech"
 #    [[languages.es.menu.main]]
 #      name = "Inicio"

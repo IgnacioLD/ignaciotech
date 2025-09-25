@@ -1,0 +1,56 @@
+{{/* Usage: {{ partial "project-card.html" (dict "project" . "page" $page "featured" true) }} */}}
+{{ $project := .project }}
+{{ $page := .page }}
+{{ $featured := .featured | default false }}
+
+<div class="card {{ if $featured }}featured-card{{ end }}" {{ if $page }}data-href="{{ $page.RelPermalink }}" role="link" tabindex="0"{{ end }}>
+  {{ if $page }}
+  <a href="{{ $page.RelPermalink }}" class="card-preview-link" aria-label="Open {{ $project.name }}">
+    <div class="project-image-placeholder">
+      {{ if $project.image }}
+        {{ partial "image.html" (dict "page" $page "src" $project.image "alt" $project.name "class" "project-preview-image" "width" 1200) }}
+      {{ else }}
+        <img src="/images/placeholders/project-apps.svg" alt="{{ $project.name }}" class="project-preview-image">
+      {{ end }}
+    </div>
+  </a>
+  <h3><a href="{{ $page.RelPermalink }}">{{ $project.name }}</a></h3>
+  {{ with $page.Params.status }}<div class="project-status status-{{ . }}">{{ . }}</div>{{ end }}
+  <p>{{ $page.Params.description | default ($page.Summary | truncate 140) }}</p>
+  {{ with $page.Params.tech }}
+  <div class="skills-list">
+    {{ range (first 3 .) }}
+    <span class="skill-tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ else }}
+  {{/* Fallback for projects without pages */}}
+  <div class="project-image-placeholder">
+    {{ if $project.image }}
+      <img src="{{ $project.image }}" alt="{{ $project.name }}" class="project-preview-image">
+    {{ else }}
+      <img src="/images/placeholders/project-apps.svg" alt="{{ $project.name }}" class="project-preview-image">
+    {{ end }}
+  </div>
+  <h3>{{ $project.name }}</h3>
+  <p>{{ $project.description }}</p>
+  {{ if $project.skills }}
+  <div class="skills-list">
+    {{ range $project.skills }}
+    <span class="skill-tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ if $project.links }}
+  <div class="project-links">
+    {{ range $project.links }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+      <span>{{ .name }}</span>
+      <span class="link-icon">↗</span>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

@@ -8,7 +8,7 @@ features = ["responsive", "dark-mode", "accessibility", "seo", "blog", "projects
 min_version = "0.116.0"
 
 [author]
-  name = "Ignacio Loyola"
+  name = "Ignacio L. D."
   homepage = "https://ignacio.tech"
 
 [params]

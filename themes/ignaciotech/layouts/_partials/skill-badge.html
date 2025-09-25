@@ -1,0 +1,14 @@
+{{/* Usage: {{ partial "skill-badge.html" (dict "skill" "Android" "featured" true) }} */}}
+{{ $skill := .skill }}
+{{ $featured := .featured | default false }}
+{{ $clickable := .clickable | default false }}
+
+{{ if $clickable }}
+<a href="/tags/{{ $skill | urlize }}" class="skill-tag {{ if $featured }}featured-skill{{ end }}" aria-label="View posts about {{ $skill }}">
+  {{ $skill }}
+</a>
+{{ else }}
+<span class="skill-tag {{ if $featured }}featured-skill{{ end }}">
+  {{ $skill }}
+</span>
+{{ end }}

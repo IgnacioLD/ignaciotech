@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Disallow sensitive areas (none currently)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: {{ site.BaseURL }}/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

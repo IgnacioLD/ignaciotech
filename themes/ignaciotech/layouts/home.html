@@ -1,17 +1,17 @@
 {{ define "main" }}
 
 <!-- Hero Section -->
-<section class="hero" data-layout="{{ .Params.hero_layout.style | default "minimal" }}">
+<section class="hero" data-layout="{{ .Params.hero_layout.style | default "minimal" }}" itemscope itemtype="http://schema.org/Person">
   <div class="hero-container"{{ with .Params.hero_layout.max_width }} style="max-width: {{ . }}"{{ end }}>
     <div class="hero-content">
       <!-- Greeting -->
       {{ with .Params.hero.greeting }}
-      <h1 class="hero-greeting">{{ . | markdownify }}</h1>
+      <h1 class="hero-greeting" itemprop="name">{{ . | markdownify }}</h1>
       {{ end }}
-      
+
       <!-- Introduction -->
       {{ with .Params.hero.introduction }}
-      <p class="hero-introduction">{{ . | markdownify }}</p>
+      <p class="hero-introduction" itemprop="description">{{ . | markdownify }}</p>
       {{ end }}
       
       <!-- Mission -->
@@ -39,23 +39,31 @@
       <!-- Social Section -->
       {{ with .Params.hero.social }}
       <div class="hero-social">
-        <strong>{{ .title }}:</strong>
-        
         {{ if .show_icons }}
         {{ partial "social-icons.html" . }}
         {{ end }}
-        
+
         {{ with .closing_message }}
         <p class="hero-closing">{{ . | markdownify }}</p>
         {{ end }}
-        
+
         {{ with .signature }}
         <p class="hero-signature">{{ . | markdownify }}</p>
         {{ end }}
       </div>
       {{ end }}
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll to explore</span>
+        <div class="scroll-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </div>
+      </div>
     </div>
-    
+
     <!-- Portrait -->
     {{ if and (.Params.hero_layout.show_portrait | default true) (.Params.hero.portrait.show | default true) }}
     <div class="hero-portrait">
@@ -67,9 +75,81 @@
   </div>
 </section>
 
-<!-- Additional Content -->
+<!-- Portfolio Content -->
+<section class="home-portfolio">
+  <div class="container">
+    <!-- What I Do Section -->
+    <div class="intro-section">
+      <h2>What I Do</h2>
+      <p><strong>AI Engineer & Android Developer</strong> specializing in intelligent mobile solutions for fintech and banking. I've developed <strong>AI proof-of-concepts that successfully scaled to full production implementations</strong>, making real business impact.</p>
+      <div class="stats-row">
+        {{ partial "skill-badge.html" (dict "skill" "5+ years experience" "featured" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "5 languages" "featured" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "Valencia, Spain 🇪🇸" "featured" true) }}
+      </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <div class="projects-section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="card-grid">
+        {{ $projects := site.Data.projects }}
+        {{ if eq site.Language.Lang "es" }}
+          {{ $projects = site.Data.es.projects }}
+        {{ end }}
+        {{ range first 3 $projects.projects }}
+          {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
+          {{ $p2 := site.GetPage (print "projects/" .slug) }}
+          {{ $page := or $p1 $p2 }}
+          {{ partial "project-card.html" (dict "project" . "page" $page "featured" true) }}
+        {{ end }}
+      </div>
+      <div class="section-footer">
+        <a href="/projects" class="cta-button">View Full Portfolio</a>
+      </div>
+    </div>
+
+    <!-- Recent Blog Posts -->
+    <div class="blog-section">
+      <h2 class="section-title">Recent Thoughts</h2>
+      <div class="blog-grid">
+        {{ $blogPages := where .Site.RegularPages "Section" "blog" }}
+        {{ range first 3 $blogPages }}
+          {{ partial "blog-card.html" (dict "post" . "compact" false) }}
+        {{ end }}
+      </div>
+      <div class="section-footer">
+        <a href="/blog" class="cta-button">Read More Articles</a>
+      </div>
+    </div>
+
+    <!-- Skills & Specialties -->
+    <div class="skills-section">
+      <h2 class="section-title">Specialties</h2>
+      <div class="skills-grid">
+        {{ partial "skill-badge.html" (dict "skill" "Generative AI" "clickable" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "Android Development" "clickable" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "Team Leadership" "clickable" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "Open Source" "clickable" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "Python" "clickable" true) }}
+        {{ partial "skill-badge.html" (dict "skill" "Kotlin" "clickable" true) }}
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h2>Want to have a chat?</h2>
+      <p>Always up for a conversation about tech, projects, or just life in general. Drop me a line!</p>
+      <div class="cta-buttons">
+        <a href="mailto:hi@ignacio.tech" class="cta-button primary">Get in Touch</a>
+        <a href="/projects" class="cta-button secondary">View Full Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 {{ with .Content }}
-<section class="home-content">
+<section class="home-content hidden">
   <div class="container">
     {{ . }}
   </div>
