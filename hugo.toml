@@ -36,10 +36,10 @@ enableRobotsTXT = true
 [languages]
   [languages.en]
     languageCode = 'en-us'
-    title = 'Ignacio L. D.'
+    title = 'Ignacio L. D. - AI Engineer & Android Developer in Valencia'
     weight = 1
     [languages.en.params]
-      description = "Ignacio L. D. - Android Developer & AI Engineer with 5+ years programming experience. Specialized in mobile development, machine learning automation, and open-source projects in Valencia, Spain."
+      description = "AI Engineer & Android Developer in Valencia, Spain. Building intelligent mobile solutions with generative AI and leading open source projects."
       author = "Ignacio L. D."
       email = "hi@ignacio.tech"
     [[languages.en.menu.main]]

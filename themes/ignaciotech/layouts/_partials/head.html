@@ -5,9 +5,9 @@
 <!-- SEO Meta Tags -->
 <meta name="description" content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Description | default .Summary | truncate 160 }}{{ end }}">
 <meta name="author" content="{{ site.Params.author }}">
-<meta name="keywords" content="{{ if .IsHome }}Android Developer, AI Engineer, Software Engineer, Mobile Development, Kotlin, Python, Machine Learning, Open Source, Spain, Valencia, Augen, Hackapet, CountIn{{ else }}{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}{{ end }}">
+<meta name="keywords" content="{{ if .IsHome }}Android Developer, AI Engineer, Generative AI, Software Engineer, Mobile Development, Kotlin, Python, Open Source, Spain, Valencia, Hackapet{{ else }}{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}{{ end }}">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ .Permalink | absURL }}">
 {{ $langCode := site.Language.LanguageCode }}
 <meta name="language" content="{{ $langCode }}">
 <meta name="geo.region" content="ES-VC">
