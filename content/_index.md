@@ -1,5 +1,5 @@
 ---
-title: "Ignacio L. D. - AI Engineer & Android Developer in Valencia"
+title: "Ignacio L. D. - AI Engineer & Android Developer - Valencia, Spain"
 description: "AI Engineer & Android Developer in Valencia, Spain. Building intelligent mobile solutions and leading open source projects."
 keywords: ["Android Developer", "AI Engineer", "Software Engineer", "Mobile Development", "Kotlin", "Python", "Machine Learning", "Open Source", "Valencia", "Spain", "Software Consultant"]
 image: "/logo.svg"
@@ -35,7 +35,7 @@ hero_layout:
 ### 🐾 Hackapet
 **Open-source animal shelter management system**
 
-Leading a **16+ member team** to build comprehensive shelter management, online adoption platform, and post-adoption monitoring tools. Helping shelters save more animals while giving developers meaningful experience.
+**Founded and initially led** this **7-person team** building comprehensive shelter management, online adoption platform, and post-adoption monitoring tools. Now contributing sporadically while the project continues helping shelters save more animals and giving developers meaningful experience.
 
 [View Project →](#) • *Currently in development*
 

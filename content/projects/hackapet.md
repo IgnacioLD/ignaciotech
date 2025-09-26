@@ -2,79 +2,100 @@
 title: "Hackapet: Open Source Animal Shelter Management"
 date: 2023-06-01
 status: "active"
-tech: ["Android", "Open Source", "Team Leadership", "Kotlin", "Room Database"]
-image: "/images/placeholders/project-apps.svg"
+tech: ["Android", "iOS", "Web", "Open Source", "Team Leadership", "Kotlin", "React"]
+image: "/images/imported/hackapet.webp"
 links:
-  - name: "Website"
-    url: "https://hackapet.org"
   - name: "GitHub"
     url: "https://github.com/hackapet-project"
-description: "Open‑source tools for animal shelters, built with a small community"
+description: "Digital platform for animal shelters, automating workflows and improving animal welfare"
 ---
 
-# Hackapet: Open Source Tools for Shelters
+# Hackapet: Digital Platform for Animal Shelters
 
-Hackapet is a community project to help animal shelters with simple, practical tools. A small group of volunteers contributes when they can, and we move at a steady pace.
+Hackapet is an open-source technological platform that digitalizes critical processes for animal shelters. Born from observed needs in multiple animal protection organizations, the project addresses the gap where many shelters rely on paper, Excel spreadsheets, and WhatsApp for their daily operations.
 
-## Project Vision
+## Mission and Vision
 
-Animal shelters worldwide face common challenges: limited resources, outdated systems, and overwhelming administrative tasks. Hackapet addresses these pain points by providing modern, user-friendly tools that streamline shelter operations and improve animal welfare outcomes.
+**Mission**: Develop accessible and effective technological tools that allow animal shelters to optimize their operational management, increase their rescue capacity, and improve living conditions for animals under their care.
 
-## Key Applications
+**Core Values**:
+- **Direct Social Impact**: Every developed feature must have measurable impact on animal welfare
+- **Operational Transparency**: Complete visibility of processes, expenses, and animal status
+- **Digital Accessibility**: Intuitive interfaces designed for users with varying technological competence
+- **Community Collaboration**: Sustainable participation of developers, designers, and volunteers
 
-### Mobile App for Shelter Staff
-- **Animal Profiles**: Complete medical and behavioral records
-- **Adoption Matching**: Algorithm-driven compatibility matching
-- **Volunteer Coordination**: Scheduling and task management
-- **Inventory Tracking**: Supplies, medications, and equipment
-- **Photo Management**: High-quality adoption photos and progress tracking
+## Platform Architecture
 
-### Web Dashboard for Administration
-- **Analytics Dashboard**: Adoption rates, length of stay, and capacity metrics
-- **Financial Tracking**: Donation management and expense reporting
-- **Report Generation**: Custom reports for stakeholders and grants
-- **Multi-shelter Support**: Franchise and network management
+### PetSync - Comprehensive Shelter Management
+- **Animal Management System**: Complete registry including basic data, medical history, behavior, rescue conditions, and adoption tracking
+- **Integrated Event Calendar**: Scheduling system for veterinary appointments, adopter visits, vaccination campaigns with automatic notifications
+- **Social Media Automation**: Publication engine that generates automatic content when animals enter the shelter
+- **Financial Transparency System**: Tool that calculates and presents expenses per animal automatically
 
-## Technical Architecture
+### PetMatch - Federated Pet Discovery
+- **Multi-shelter Search Platform**: Find animals across different shelters
+- **Advanced Filtering**: Search by breed, coat type, size, temperament
+- **Simplified Adoption Process**: Streamlined workflow for potential adopters
 
-Built with modern Android development practices:
+### AdopTrack - Post-Adoption Monitoring
+- **Progress Tracking**: Monitor pet adaptation in new homes
+- **Behavioral Follow-up**: Track animal behavior and adjustment
+- **New Owner Support**: Resources and guidance for new pet parents
 
-- **Architecture**: MVVM with clean architecture principles
-- **Database**: Room for local storage with cloud sync capabilities
-- **UI Framework**: Jetpack Compose for modern, accessible interfaces
-- **Networking**: Retrofit with coroutines for efficient API calls
-- **Testing**: Comprehensive unit and integration test coverage
-- **CI/CD**: Automated testing and deployment pipelines
+## Technical Specifications
 
-## Community
+**Platform Priorities**: Mobile native first and desktop web, ensuring optimal experience on both native mobile applications and desktop browsers.
 
-This is a small, volunteer‑led project in early development. There are no production deployments yet; we’re prototyping and gathering feedback with shelters.
+**Architecture**:
+- **Mobile**: Native Android and iOS applications
+- **Web**: React-based dashboard for administrative functions
+- **Backend**: API-first development with robust data management
+- **Database**: Comprehensive animal data storage with medical records, photos, and behavioral notes
+- **Integration**: Social media APIs for automated posting, potential integration with official animal identification databases
 
-- **16+ Active Contributors** from 8 countries
-- **Multiple Shelter Pilots** in Spain and Portugal
-- **Educational Partnerships** with veterinary schools
-- **Documentation Hub** with onboarding guides
-- **Community Forums** for feature requests and support
+## Development Progress
 
-## What I'm Learning
+**Validated Requirements with SOS Peludetes**: Through meetings with Felipe Gadea, Empar, Pili, Toñi, and Ignacio L. D., we documented specific requirements including chip reading integration, social media automation priority, comprehensive medical management, and financial transparency.
 
-- **Remote collaboration** across different time zones
-- **Architecture trade‑offs** and planning
-- **Onboarding contributors** and documentation
-- **Working with shelters** and their constraints
-- **Lightweight planning** for volunteer teams
+**Current Status - In Development Phase**:
+- Prototyping core functionality with partner shelters
+- Building foundational architecture and data models
+- Actively developing iOS and Android applications
+- Implementing web dashboard interfaces
+- Testing workflows with real shelter operations
 
-## Current Roadmap
+**Development Community**:
+- Spanish team of contributors working collaboratively
+- Open source development with transparent decision-making
+- Monthly workshops and technical sessions for community engagement
 
-Near‑term focus:
+## Development Phases
 
-1. Small pilot workflows with a partner shelter
-2. Basic admin features and data model
-3. Simple web dashboard MVP
-4. Accessibility and reliability basics
+**Phase 1 (Months 1-2)**: Core Functionality
+- Basic CRUD operations for animal management (starting with dogs)
+- Event calendar for veterinary appointments and visits
+- Initial social media automation prototype
+
+**Phase 2 (Months 2-4)**: Advanced Features
+- Complete adoption workflow with post-adoption tracking
+- Transparency dashboard with automatic expense calculation
+- Enhanced social media automation with customizable templates
+
+**Phase 3 (Months 4-6)**: Optimization and Expansion
+- Multi-species support (cats and other animals)
+- Advanced features like rescue geolocation and donation integration
+- Performance optimization for concurrent multi-shelter use
+
+## Sustainability
+
+**Community-Driven Development**: Open source project sustained by volunteer contributions and community engagement.
+
+**Sustainability Model**: Evaluation of complementary services like web development for shelters under the hackapet.org domain, creating a mutual support ecosystem.
 
 ## Get Involved
 
-Hackapet welcomes contributors of all skill levels. Whether you're a developer, designer, veterinarian, or animal welfare advocate, there's a place for you in our community.
+Hackapet represents more than a technological project; it's an initiative seeking measurable social impact through collaborative development of specific tools for a sector that has historically depended on limited resources.
+
+Whether you're a developer, designer, or passionate about animal welfare, there's a place for you in our community.
 
 Visit our [GitHub organization](https://github.com/hackapet-project) to explore the codebase, read documentation, and join the mission to help shelters save more lives through technology.

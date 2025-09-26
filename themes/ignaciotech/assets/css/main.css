@@ -3313,3 +3313,17 @@ a.cta-outline:visited { color: var(--primary-color); }
 .copy-code-btn.copied { color: #059669; border-color: rgba(5, 150, 105, 0.5); }
 
 .project-content pre { position: relative; }
+
+/* Responsive logo text */
+.logo-short {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .logo-full {
+    display: none;
+  }
+  .logo-short {
+    display: inline;
+  }
+}
