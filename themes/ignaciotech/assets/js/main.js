@@ -142,13 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }, { threshold: 0.1, rootMargin: '50px' });
 
-      // Observe cards and sections (exclude blog post content)
-      document.querySelectorAll('.card, .content-section:not(.blog-content)').forEach(el => {
-        // Skip if this is within a blog post
-        if (el.closest('.blog-post, .single-blog')) return;
-        // Use CSS classes instead of inline styles to avoid conflicts
-        el.classList.add('reveal-on-scroll');
-        observer.observe(el);
+      // Only observe cards on homepage - no animations for blog posts or project pages
+      document.querySelectorAll('.card').forEach(el => {
+        // Only apply animations to cards on the homepage
+        if (document.body.classList.contains('home') || window.location.pathname === '/') {
+          el.classList.add('reveal-on-scroll');
+          observer.observe(el);
+        }
       });
     }
   };
