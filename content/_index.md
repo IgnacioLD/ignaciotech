@@ -6,7 +6,7 @@ image: "/logo.svg"
 
 hero:
   greeting: "Hallöchen, I'm **Ignacio**"
-  introduction: "A **software and AI developer** based in Valencia, Spain.  \nI build technology that **empowers people**."
+  introduction: "An **Android & AI developer** based in Valencia, Spain.  \nI build technology that **empowers people**."
 
   social:
     show_icons: true

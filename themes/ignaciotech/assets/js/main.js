@@ -135,17 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('revealed');
+            entry.target.style.opacity = '';
+            entry.target.style.transform = '';
           }
         });
       }, { threshold: 0.1, rootMargin: '50px' });
-      
-      // Observe cards and sections
-      document.querySelectorAll('.card, .content-section').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+      // Observe cards and sections (exclude blog post content)
+      document.querySelectorAll('.card, .content-section:not(.blog-content)').forEach(el => {
+        // Skip if this is within a blog post
+        if (el.closest('.blog-post, .single-blog')) return;
+        // Use CSS classes instead of inline styles to avoid conflicts
+        el.classList.add('reveal-on-scroll');
         observer.observe(el);
       });
     }
