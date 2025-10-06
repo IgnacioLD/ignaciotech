@@ -1,4 +1,35 @@
 projects:
+  - name: "LANZAT"
+    slug: "lanzat"
+    description: "NASA Space Apps Challenge 2025 climate resilience platform combining 173 years of satellite data with AI to predict Florida county vulnerability."
+    image: "/images/projects/lanzat-logo.png"
+    status: "Completed"
+    year: "2025"
+    team_size: "Hackathon Team"
+    stack:
+      - "Python"
+      - "FastAPI"
+      - "Next.js"
+      - "TypeScript"
+      - "GeoPandas"
+      - "Leaflet"
+    features:
+      - "173 Years Historical Data"
+      - "67 Florida Counties"
+      - "Real-time Tracking"
+      - "87% Prediction Accuracy"
+    skills:
+      - "NASA Data"
+      - "Climate Tech"
+      - "Geospatial"
+    links:
+      - name: "Live Demo"
+        url: "https://lanzat.ignacio.tech"
+      - name: "API Docs"
+        url: "https://lanzat.api.ignacio.tech/docs"
+      - name: "GitHub"
+        url: "https://github.com/hortasat-spaceapps-2025/lanzat"
+
   - name: "Augen"
     slug: "augen"
     description: "AI-Powered Vision Assistant for Accessibility with voice interaction and multilingual support."

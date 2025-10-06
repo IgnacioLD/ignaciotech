@@ -3024,6 +3024,33 @@ a.cta-outline:visited { color: var(--primary-color); }
   color: var(--text-color);
 }
 
+/* Featured projects and blog posts - 3 columns in a row */
+.home-portfolio .card-grid,
+.home-portfolio .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Responsive for tablets - 2 columns */
+@media (max-width: 1024px) {
+  .home-portfolio .card-grid,
+  .home-portfolio .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive for mobile - 1 column */
+@media (max-width: 768px) {
+  .home-portfolio .card-grid,
+  .home-portfolio .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .section-footer {
   text-align: center;
   margin-top: 3rem;
