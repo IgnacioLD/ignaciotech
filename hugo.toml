@@ -27,7 +27,7 @@ enableRobotsTXT = true
   maxFeaturedProjects = 3
 
 [params.social]
-  linkedin = "https://linkedin.com/in/IgnacioLD"
+  linkedin = "https://www.linkedin.com/in/ignacio-tech"
   mastodon = "https://mastodon.social/@shirabit"
   github = "https://github.com/IgnacioLD"
   email = "hi@ignacio.tech"
