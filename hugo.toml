@@ -28,10 +28,8 @@ enableRobotsTXT = true
 
 [params.social]
   linkedin = "https://www.linkedin.com/in/ignacio-tech"
-  mastodon = "https://mastodon.social/@shirabit"
   github = "https://github.com/IgnacioLD"
   email = "hi@ignacio.tech"
-  x = "https://x.com/shirabit"
 
 [languages]
   [languages.en]
