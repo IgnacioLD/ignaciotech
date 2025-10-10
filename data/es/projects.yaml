@@ -1,15 +1,43 @@
 projects:
   - name: "EdgeMind"
     slug: "edgemind"
-    description: "Sistema experimental de inferencia LLM para Android explorando tokenización personalizada, caché KV y aceleración de hardware desde cero."
+    description: "Sistema de MLOps edge construido DESDE CERO - inferencia LLM on-device con tokenizador BPE personalizado, KV caching y aceleración NNAPI. 4 tokens/seg en móvil."
     image: "/images/projects/edgemind.svg"
     skills:
-      - "Android"
       - "Edge AI"
-      - "ONNX"
+      - "MLOps"
+      - "Despliegue de Modelos"
     links:
       - name: "GitHub"
         url: "https://github.com/IgnacioLD/edgemind"
+
+  - name: "LANZAT"
+    slug: "lanzat"
+    description: "Sistema de predicción de riesgo climático con ML construido DESDE CERO para NASA Space Apps 2025. Pipeline ML geoespacial procesando 173 años de datos satelitales con 87% precisión."
+    image: "/images/projects/lanzat-logo.png"
+    skills:
+      - "MLOps"
+      - "Ingeniería de Datos"
+      - "Despliegue de Modelos"
+    links:
+      - name: "Demo en Vivo"
+        url: "https://lanzat.ignacio.tech"
+      - name: "API Docs"
+        url: "https://lanzat.api.ignacio.tech/docs"
+      - name: "GitHub"
+        url: "https://github.com/hortasat-spaceapps-2025/lanzat"
+
+  - name: "Augen"
+    slug: "augen"
+    description: "Asistente de visión con GenAI construido DESDE CERO con interacción de voz multilingüe. Visión por computadora en tiempo real + integración LLM para accesibilidad. 12 idiomas soportados."
+    image: "/images/placeholders/project-apps.svg"
+    skills:
+      - "GenAI"
+      - "Visión por Computadora"
+      - "Integración LLM"
+    links:
+      - name: "Demo en Vivo"
+        url: "https://augen.ignacio.tech"
 
   - name: "Hackapet"
     slug: "hackapet"
@@ -22,18 +50,6 @@ projects:
     links:
       - name: "GitHub"
         url: "https://github.com/hackapet-project"
-
-  - name: "Augen"
-    slug: "augen"
-    description: "Asistente de Visión IA para Accesibilidad con interacción por voz y soporte multiidioma."
-    image: "/images/placeholders/project-apps.svg"
-    skills:
-      - "Visión IA"
-      - "Accesibilidad"
-      - "12 Idiomas"
-    links:
-      - name: "Demo en Vivo"
-        url: "https://augen.ignacio.tech"
         
   - name: "CountIn"
     slug: "countin"

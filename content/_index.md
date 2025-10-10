@@ -1,12 +1,12 @@
 ---
-title: "Ignacio L. D. - AI Engineer & Android Developer - Valencia, Spain"
-description: "AI Engineer & Android Developer in Valencia, Spain. Building intelligent mobile solutions and leading open source projects."
-keywords: ["Android Developer", "AI Engineer", "Software Engineer", "Mobile Development", "Kotlin", "Python", "Machine Learning", "Open Source", "Valencia", "Spain", "Software Consultant"]
+title: "Ignacio L. D. - MLOps & GenAI Engineer - Valencia, Spain"
+description: "MLOps & GenAI Engineer with 5+ years experience. Built enterprise AI FROM SCRATCH for major European bank. Hardware tinkering since 12, programming since 15. Fluent in 5 languages."
+keywords: ["MLOps Engineer", "GenAI Engineer", "LLM Engineering", "AI Infrastructure", "Machine Learning", "Python", "Edge AI", "Model Deployment", "Valencia", "Spain", "AI Systems"]
 image: "/logo.svg"
 
 hero:
   greeting: "Hallöchen, I'm **Ignacio**"
-  introduction: "An **Android & AI developer** based in Valencia, Spain.  \nI build technology that **empowers people**."
+  introduction: "An **MLOps & GenAI engineer** based in Valencia, Spain.  \nI build **production AI systems FROM SCRATCH**."
 
   social:
     show_icons: true
