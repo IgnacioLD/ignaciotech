@@ -1,7 +1,7 @@
 ---
 title: "CountIn: Vision-Based Occupancy Tracker"
-date: 2025-10-11
-status: "active"
+date: 2024-10-11
+status: "completed"
 tech: ["Computer Vision", "TensorFlow.js", "Edge AI", "Real-Time Tracking", "Browser ML"]
 image: "/images/placeholders/project-apps.svg"
 links:

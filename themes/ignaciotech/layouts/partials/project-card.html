@@ -15,12 +15,31 @@
     </div>
   </a>
   <h3><a href="{{ $page.RelPermalink }}">{{ $project.name }}</a></h3>
-  {{ with $page.Params.status }}<div class="project-status status-{{ . }}">{{ . }}</div>{{ end }}
+  {{ $status := $page.Params.status | default $project.status }}
+  {{ with $status }}<div class="project-status {{ . }}">{{ . }}</div>{{ end }}
   <p>{{ $page.Params.description | default ($page.Summary | truncate 140) }}</p>
+  {{ if $project.stack }}
+  <div class="skills-list">
+    {{ range (first 3 $project.stack) }}
+    <span class="skill-tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ else }}
   {{ with $page.Params.tech }}
   <div class="skills-list">
     {{ range (first 3 .) }}
     <span class="skill-tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+  {{ if $project.links }}
+  <div class="project-links">
+    {{ range $project.links }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+      <span>{{ .name }}</span>
+      <span class="link-icon">↗</span>
+    </a>
     {{ end }}
   </div>
   {{ end }}
@@ -34,6 +53,7 @@
     {{ end }}
   </div>
   <h3>{{ $project.name }}</h3>
+  {{ with $project.status }}<div class="project-status {{ . }}">{{ . }}</div>{{ end }}
   <p>{{ $project.description }}</p>
   {{ if $project.skills }}
   <div class="skills-list">

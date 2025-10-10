@@ -105,7 +105,9 @@
         {{ range first 3 $projects.projects }}
           {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
           {{ $p2 := site.GetPage (print "projects/" .slug) }}
-          {{ $page := or $p1 $p2 }}
+          {{ $p3 := site.GetPage (print "/projects/" .slug) }}
+          {{ $p4 := site.GetPage (print "content/projects/" .slug ".md") }}
+          {{ $page := or $p1 $p2 $p3 $p4 }}
           {{ partial "project-card.html" (dict "project" . "page" $page "featured" true) }}
         {{ end }}
       </div>
