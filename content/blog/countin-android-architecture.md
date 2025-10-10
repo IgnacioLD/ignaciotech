@@ -5,6 +5,10 @@ tags: ["Android", "Kotlin", "Architecture", "Real-Time", "Firebase"]
 categories: ["Android Development", "Architecture"]
 description: "Deep dive into the architecture decisions and implementation details of CountIn, a real-time occupancy tracking app"
 image: "/images/imported/countin.webp"
+featured: true
+readtime: "8 min read"
+level: "Technical"
+type: "blog"
 ---
 
 Building CountIn was an excellent opportunity to implement modern Android architecture patterns in a real-world application. The app's requirements - real-time synchronization, offline capability, and multi-user coordination - provided interesting technical challenges that pushed me to make thoughtful architectural decisions.

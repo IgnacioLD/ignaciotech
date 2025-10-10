@@ -12,7 +12,7 @@
     <div class="projects-section featured-projects">
       <h2 class="projects-section-title">Featured Projects</h2>
       <div class="card-grid">
-        {{ range $projects.projects }}
+        {{ range first 3 $projects.projects }}
         {{ $p1 := site.GetPage (print "/projects/" .slug "/") }}
         {{ $p2 := site.GetPage (print "projects/" .slug) }}
         {{ $page := or $p1 $p2 }}
@@ -74,12 +74,8 @@
     <div class="projects-section all-projects">
       <h2 class="projects-section-title">All Projects</h2>
       <ul class="post-list--media">
-        {{ $s := newScratch }}
-        {{ range $projects.projects }}{{ $s.Add "featuredSlugs" (slice .slug) }}{{ end }}
-        {{ $featuredSlugs := $s.Get "featuredSlugs" }}
         {{ range .Site.RegularPages }}
-          {{ $pSlug := .File.BaseFileName }}
-          {{ if and (eq .Section "projects") (not (in $featuredSlugs $pSlug)) }}
+          {{ if eq .Section "projects" }}
           <li class="post-item--media">
             <a href="{{ .RelPermalink }}" aria-label="Open {{ .Title }}">
               <img class="post-thumb" src="{{ with .Params.image }}{{ . }}{{ else }}/images/placeholders/project-apps.svg{{ end }}" alt="" aria-hidden="true">

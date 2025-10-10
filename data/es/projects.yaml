@@ -1,4 +1,28 @@
 projects:
+  - name: "EdgeMind"
+    slug: "edgemind"
+    description: "Sistema experimental de inferencia LLM para Android explorando tokenización personalizada, caché KV y aceleración de hardware desde cero."
+    image: "/images/projects/edgemind.svg"
+    skills:
+      - "Android"
+      - "Edge AI"
+      - "ONNX"
+    links:
+      - name: "GitHub"
+        url: "https://github.com/IgnacioLD/edgemind"
+
+  - name: "Hackapet"
+    slug: "hackapet"
+    description: "Proyecto de código abierto para refugios de animales liderando un equipo de más de 16 miembros."
+    image: "/images/imported/hackapet.webp"
+    skills:
+      - "Código Abierto"
+      - "Liderazgo de Equipos"
+      - "Android"
+    links:
+      - name: "GitHub"
+        url: "https://github.com/hackapet-project"
+
   - name: "Augen"
     slug: "augen"
     description: "Asistente de Visión IA para Accesibilidad con interacción por voz y soporte multiidioma."
@@ -10,18 +34,6 @@ projects:
     links:
       - name: "Demo en Vivo"
         url: "https://augen.ignacio.tech"
-        
-  - name: "Hackapet"
-    slug: "hackapet"
-    description: "Proyecto de código abierto para refugios de animales liderando un equipo de más de 16 miembros."
-    image: "/images/placeholders/project-apps.svg"
-    skills:
-      - "Código Abierto"
-      - "Liderazgo de Equipos"
-      - "Android"
-    links:
-      - name: "GitHub"
-        url: "https://github.com/hackapet-project"
         
   - name: "CountIn"
     slug: "countin"

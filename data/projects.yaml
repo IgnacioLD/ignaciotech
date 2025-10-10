@@ -1,4 +1,31 @@
 projects:
+  - name: "EdgeMind"
+    slug: "edgemind"
+    description: "Experimental LLM inference system for Android exploring custom tokenization, KV caching, and hardware acceleration from scratch."
+    image: "/images/projects/edgemind.svg"
+    status: "Experimental"
+    year: "2025"
+    team_size: "Solo Project"
+    stack:
+      - "Android"
+      - "Kotlin"
+      - "ONNX Runtime"
+      - "Machine Learning"
+      - "Edge AI"
+      - "NNAPI"
+    features:
+      - "4 tokens/second"
+      - "Custom BPE Tokenizer"
+      - "KV Cache (6x speedup)"
+      - "NNAPI Acceleration"
+    skills:
+      - "Android"
+      - "Edge AI"
+      - "ONNX"
+    links:
+      - name: "GitHub"
+        url: "https://github.com/IgnacioLD/edgemind"
+
   - name: "LANZAT"
     slug: "lanzat"
     description: "NASA Space Apps Challenge 2025 climate resilience platform combining 173 years of satellite data with AI to predict Florida county vulnerability."
@@ -30,32 +57,6 @@ projects:
       - name: "GitHub"
         url: "https://github.com/hortasat-spaceapps-2025/lanzat"
 
-  - name: "Augen"
-    slug: "augen"
-    description: "AI-Powered Vision Assistant for Accessibility with voice interaction and multilingual support."
-    image: "/images/placeholders/project-apps.svg"
-    status: "Live"
-    year: "2024"
-    team_size: "Solo Project"
-    stack:
-      - "Python"
-      - "FastAPI"
-      - "Computer Vision"
-      - "OpenAI API"
-      - "Web Technologies"
-    features:
-      - "12 Languages Support"
-      - "Voice Interaction"
-      - "Real-time Processing"
-      - "Accessibility First"
-    skills:
-      - "AI Vision"
-      - "Accessibility"
-      - "12 Languages"
-    links:
-      - name: "Live Demo"
-        url: "https://augen.ignacio.tech"
-        
   - name: "Hackapet"
     slug: "hackapet"
     description: "Open-source project for animal shelters leading a team of 6 members."
@@ -81,6 +82,32 @@ projects:
     links:
       - name: "GitHub"
         url: "https://github.com/hackapet-project"
+
+  - name: "Augen"
+    slug: "augen"
+    description: "AI-Powered Vision Assistant for Accessibility with voice interaction and multilingual support."
+    image: "/images/placeholders/project-apps.svg"
+    status: "Live"
+    year: "2024"
+    team_size: "Solo Project"
+    stack:
+      - "Python"
+      - "FastAPI"
+      - "Computer Vision"
+      - "OpenAI API"
+      - "Web Technologies"
+    features:
+      - "12 Languages Support"
+      - "Voice Interaction"
+      - "Real-time Processing"
+      - "Accessibility First"
+    skills:
+      - "AI Vision"
+      - "Accessibility"
+      - "12 Languages"
+    links:
+      - name: "Live Demo"
+        url: "https://augen.ignacio.tech"
         
   - name: "CountIn"
     slug: "countin"

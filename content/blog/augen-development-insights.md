@@ -4,7 +4,7 @@ date: 2024-03-01
 tags: ["AI", "Accessibility", "Computer Vision", "Web Development"]
 categories: ["AI", "Accessibility"]
 description: "Development insights and challenges from building an AI-powered vision assistant for accessibility"
-featured: true
+featured: false
 readtime: "8 min read"
 level: "Technical"
 type: "blog"
