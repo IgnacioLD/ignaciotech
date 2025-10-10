@@ -1,0 +1,55 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0f172a"/>
+
+  <!-- Mobile device outline -->
+  <rect x="140" y="60" width="120" height="180" rx="12" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <rect x="150" y="75" width="100" height="150" rx="4" fill="#1e293b"/>
+
+  <!-- Screen with neural network visualization -->
+  <!-- Layer 1 (input) - 4 nodes -->
+  <circle cx="170" cy="100" r="4" fill="#8b5cf6"/>
+  <circle cx="170" cy="130" r="4" fill="#8b5cf6"/>
+  <circle cx="170" cy="160" r="4" fill="#8b5cf6"/>
+  <circle cx="170" cy="190" r="4" fill="#8b5cf6"/>
+
+  <!-- Layer 2 (hidden) - 6 nodes -->
+  <circle cx="200" cy="90" r="4" fill="#06b6d4"/>
+  <circle cx="200" cy="115" r="4" fill="#06b6d4"/>
+  <circle cx="200" cy="140" r="4" fill="#06b6d4"/>
+  <circle cx="200" cy="165" r="4" fill="#06b6d4"/>
+  <circle cx="200" cy="190" r="4" fill="#06b6d4"/>
+  <circle cx="200" cy="210" r="4" fill="#06b6d4"/>
+
+  <!-- Layer 3 (output) - 3 nodes -->
+  <circle cx="230" cy="120" r="4" fill="#10b981"/>
+  <circle cx="230" cy="150" r="4" fill="#10b981"/>
+  <circle cx="230" cy="180" r="4" fill="#10b981"/>
+
+  <!-- Connections (partial for visual effect) -->
+  <line x1="170" y1="100" x2="200" y2="90" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
+  <line x1="170" y1="130" x2="200" y2="115" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
+  <line x1="170" y1="160" x2="200" y2="140" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
+  <line x1="200" y1="115" x2="230" y2="120" stroke="#06b6d4" stroke-width="0.5" opacity="0.3"/>
+  <line x1="200" y1="140" x2="230" y2="150" stroke="#06b6d4" stroke-width="0.5" opacity="0.3"/>
+  <line x1="200" y1="165" x2="230" y2="180" stroke="#06b6d4" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- CPU/NPU chip indicator -->
+  <rect x="155" y="80" width="15" height="15" rx="2" fill="#334155" stroke="#3b82f6" stroke-width="1"/>
+  <text x="162.5" y="90" font-family="monospace" font-size="8" fill="#3b82f6" text-anchor="middle">N</text>
+
+  <!-- Bottom bar (home indicator) -->
+  <rect x="180" y="230" width="40" height="3" rx="1.5" fill="#475569"/>
+
+  <!-- Accent elements (data flow) -->
+  <path d="M 120 140 L 140 140" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" from="8" to="0" dur="1s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 260 150 L 280 150" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Title -->
+  <text x="200" y="270" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0" text-anchor="middle">EdgeMind</text>
+  <text x="200" y="285" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Edge LLM Inference</text>
+</svg>
