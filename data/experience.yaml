@@ -1,13 +1,14 @@
 experience:
   - date: "Jul 2023 - Jul 2025"
     title: "AI Engineer | SSr Android Developer"
-    company: "Globant for Santander Banking App"
-    description: "Designed and implemented AI-powered automation tools using Python scripts. Implemented Mobile A11y standards for visually impaired users and developed support panel features for banking ecosystem across Spain, Portugal, Poland, and UK."
+    company: "Globant - Major European Financial Institution"
+    description: "Designed and implemented AI-powered automation tools from scratch for enterprise client. Implemented Mobile A11y standards for visually impaired users and developed banking features across multi-country deployment (Spain, Portugal, Poland, UK). Built production AI systems handling code generation, review automation, and intelligent tooling."
     skills:
+      - "Enterprise AI"
       - "AI Automation"
       - "Android A11y"
       - "Python"
-      - "Banking"
+      - "Banking Systems"
       
   - date: "2021 - Present"
     title: "Organizer & Mentor"
