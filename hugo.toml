@@ -1,3 +1,4 @@
+baseURL = 'https://ignacio.tech/'
 defaultContentLanguage = 'en'
 theme = 'ignaciotech'
 enableRobotsTXT = true
