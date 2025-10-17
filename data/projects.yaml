@@ -23,8 +23,6 @@ projects:
       - "MLOps"
       - "Model Deployment"
     links:
-      - name: "Live Demo"
-        url: "https://edgemind.ignacio.tech"
       - name: "GitHub"
         url: "https://github.com/ignaciold/edgemind"
 
